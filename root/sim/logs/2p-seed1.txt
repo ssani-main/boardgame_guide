@@ -1,0 +1,132 @@
+R00 Game     | Factions Marquise, Eyrie; seating Eyrie → Marquise
+R00 Marquise | keep in rabbit-4; sawmill/workshop/recruiter at rabbit-4, fox-8, mouse-9
+R00 Eyrie    | roost and 6 warriors in mouse-2; leader Charismatic
+R01 Eyrie    | adds mouse to move, bird to move → Decree rec B | mov MB | bat B | bui 
+R01 Eyrie    | Decree recruit: 2 in mouse-2
+R01 Eyrie    | moves 4 warriors mouse-2 → rabbit-5
+R01 Eyrie    | moves 4 warriors rabbit-5 → fox-1
+R01 Eyrie    | battles Marquise in fox-1
+R01 Eyrie    | rolls 3/2: deals 3, takes 1
+R01 Eyrie    | Evening: draws 1
+R01 Marquise | Birdsong: 1 wood at sawmills
+R01 Marquise | builds a workshop in rabbit-3
+R01 Marquise | +2 VP (workshop #2) → 2
+R01 Marquise | recruits 1 warrior
+R01 Marquise | overworks the sawmill in rabbit-4
+R01 Marquise | Evening: draws 1
+R02 Eyrie    | adds mouse to recruit → Decree rec BM | mov MB | bat B | bui 
+R02 Eyrie    | Decree recruit: 2 in mouse-2
+R02 Eyrie    | Decree recruit: 2 in mouse-2
+R02 Eyrie    | moves 4 warriors mouse-2 → rabbit-5
+R02 Eyrie    | moves 1 warrior rabbit-5 → fox-1
+R02 Eyrie    | battles Marquise in rabbit-5
+R02 Eyrie    | rolls 0/0: deals 0, takes 0
+R02 Eyrie    | Evening: draws 1
+R02 Marquise | Birdsong: 1 wood at sawmills
+R02 Marquise | builds a workshop in mouse-9
+R02 Marquise | +2 VP (workshop #3) → 4
+R02 Marquise | recruits 1 warrior
+R02 Marquise | overworks the sawmill in rabbit-4
+R02 Marquise | Evening: draws 1
+R03 Eyrie    | adds rabbit to build → Decree rec BM | mov MB | bat B | bui R
+R03 Eyrie    | Decree recruit: 2 in mouse-2
+R03 Eyrie    | Decree recruit: 2 in mouse-2
+R03 Eyrie    | moves 1 warrior mouse-2 → rabbit-5
+R03 Eyrie    | moves 1 warrior mouse-2 → rabbit-5
+R03 Eyrie    | battles Marquise in rabbit-5
+R03 Eyrie    | rolls 3/3: deals 3, takes 1
+R03 Eyrie    | Decree build: roost in rabbit-5
+R03 Eyrie    | +1 VP (2 roosts) → 1
+R03 Eyrie    | Evening: draws 1
+R03 Marquise | Birdsong: 1 wood at sawmills
+R03 Marquise | crafts Tax Collector (persistent)
+R03 Marquise | builds a sawmill in rabbit-3
+R03 Marquise | +1 VP (sawmill #2) → 5
+R03 Marquise | builds a recruiter in fox-6
+R03 Marquise | +1 VP (recruiter #2) → 6
+R03 Marquise | recruits 2 warriors
+R03 Marquise | Evening: draws 1
+R04 Eyrie    | adds fox to build → Decree rec BM | mov MB | bat B | bui RF
+R04 Eyrie    | Decree recruit: 2 in mouse-2
+R04 Eyrie    | Decree recruit: 2 in rabbit-5
+R04 Eyrie    | moves 4 warriors mouse-2 → rabbit-10
+R04 Eyrie    | moves 1 warrior rabbit-5 → fox-1
+R04 Eyrie    | battles Marquise in rabbit-10
+R04 Eyrie    | rolls 1/0: deals 1, takes 0
+R04 Eyrie    | Decree build: roost in rabbit-10
+R04 Eyrie    | Decree build: roost in fox-1
+R04 Eyrie    | +3 VP (4 roosts) → 4
+R04 Eyrie    | Evening: draws 2
+R04 Marquise | Birdsong: 2 wood at sawmills
+R04 Marquise | Tax Collector: removes a warrior in mouse-9 to draw
+R04 Marquise | builds a sawmill in mouse-7
+R04 Marquise | +2 VP (sawmill #3) → 8
+R04 Marquise | recruits 2 warriors
+R04 Marquise | overworks the sawmill in rabbit-3
+R04 Marquise | Evening: draws 1
+R05 Eyrie    | adds rabbit to recruit → Decree rec BMR | mov MB | bat B | bui RF
+R05 Eyrie    | Decree recruit: 2 in mouse-2
+R05 Eyrie    | cannot recruit in a rabbit clearing
+R05 Eyrie    | TURMOIL: humiliated for 3 bird cards
+R05 Eyrie    | -3 VP (turmoil) → 1
+R05 Eyrie    | Charismatic deposed; new leader Builder
+R05 Eyrie    | +3 VP (4 roosts) → 4
+R05 Eyrie    | Evening: draws 2
+R05 Marquise | Birdsong: 3 wood at sawmills
+R05 Marquise | builds a workshop in mouse-7
+R05 Marquise | +3 VP (workshop #4) → 11
+R05 Marquise | recruits 2 warriors
+R05 Marquise | overworks the sawmill in rabbit-3
+R05 Marquise | Evening: draws 1
+R06 Eyrie    | adds rabbit to recruit → Decree rec BR | mov B | bat  | bui 
+R06 Eyrie    | cannot recruit in a rabbit clearing
+R06 Eyrie    | TURMOIL: humiliated for 2 bird cards
+R06 Eyrie    | -2 VP (turmoil) → 2
+R06 Eyrie    | Builder deposed; new leader Commander
+R06 Eyrie    | +3 VP (4 roosts) → 5
+R06 Eyrie    | Evening: draws 2
+R06 Marquise | Birdsong: 3 wood at sawmills
+R06 Marquise | crafts Gently Used Knapsack (bag)
+R06 Marquise | +1 VP (crafted bag) → 12
+R06 Marquise | builds a workshop in fox-8
+R06 Marquise | +4 VP (workshop #5) → 16
+R06 Marquise | builds a recruiter in mouse-11
+R06 Marquise | +2 VP (recruiter #3) → 18
+R06 Marquise | recruits 3 warriors
+R06 Marquise | Evening: draws 2
+R07 Eyrie    | adds fox to move → Decree rec  | mov BF | bat B | bui 
+R07 Eyrie    | crafts Travel Gear (boot)
+R07 Eyrie    | +1 VP (crafted boot) → 6
+R07 Eyrie    | moves 5 warriors fox-1 → mouse-9
+R07 Eyrie    | moves 3 warriors rabbit-10 → fox-12
+R07 Eyrie    | battles Marquise in mouse-9
+R07 Eyrie    | rolls 3/1: deals 4, takes 1 (Commander +1)
+R07 Marquise | Field Hospitals: spends Codebreakers (mouse), 4 warriors back to the keep
+R07 Eyrie    | +3 VP (4 roosts) → 9
+R07 Eyrie    | Evening: draws 2
+R07 Marquise | Birdsong: 3 wood at sawmills
+R07 Marquise | crafts Sword (sword)
+R07 Marquise | +2 VP (crafted sword) → 20
+R07 Marquise | builds a recruiter in mouse-11
+R07 Marquise | +3 VP (recruiter #4) → 23
+R07 Marquise | recruits 4 warriors
+R07 Marquise | overworks the sawmill in rabbit-3
+R07 Marquise | Evening: draws 2
+R08 Eyrie    | adds bird to recruit → Decree rec B | mov BF | bat B | bui 
+R08 Eyrie    | crafts Sappers (persistent)
+R08 Eyrie    | Decree recruit: 1 in fox-1
+R08 Eyrie    | moves 3 warriors fox-12 → rabbit-4
+R08 Eyrie    | moves 6 warriors mouse-2 → fox-6
+R08 Eyrie    | battles Marquise in mouse-9
+R08 Eyrie    | rolls 3/3: deals 4, takes 3 (Commander +1)
+R08 Eyrie    | +1 VP (removed Marquise recruiter) → 10
+R08 Marquise | Field Hospitals: spends Favor of the Mice (mouse), 3 warriors back to the keep
+R08 Eyrie    | +3 VP (4 roosts) → 13
+R08 Eyrie    | Evening: draws 2
+R08 Marquise | Birdsong: 3 wood at sawmills
+R08 Marquise | Tax Collector: removes a warrior in rabbit-4 to draw
+R08 Marquise | crafts Root Tea (tea)
+R08 Marquise | +2 VP (crafted tea) → 25
+R08 Marquise | builds a workshop in fox-12
+R08 Marquise | +5 VP (workshop #6) → 30
+R08 Game     | GAME OVER: Marquise win (30 VP); Marquise 30, Eyrie 13

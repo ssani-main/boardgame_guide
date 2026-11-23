@@ -11,6 +11,7 @@ the publishers. Game names, rulebook images and card texts belong to their owner
 | Folder | Game | What's inside |
 |---|---|---|
 | [`hegemony/`](hegemony/) | *Hegemony: Lead Your Class to Victory* (Hegemonic Project Games, 2021) | Full rules reference, one-page illustrated rules digest, English card texts, a rules simulator with example games |
+| [`root/`](root/) | *Root: A Game of Woodland Might and Right* (Leder Games, 2018), base game | Full rules reference (Law of Root, Oct 2025), one-page illustrated rules digest, all 54 deck cards plus leaders, characters and quests with official card images, a rules simulator with example games |
 
 ## How a game folder is usually laid out
 

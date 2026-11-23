@@ -1,0 +1,1141 @@
+<!doctype html>
+<!--
+  Root · Rules Digest (unofficial, based on the Law of Root, Oct 13 2025; base game only)
+  Visual style: the manga panel layout of ../hegemony/hegemony-rules.html (MIT "Manga Panel Dev Tool Page"
+  template), recoloured with Root's suit and faction colours: ink panels, sketchy SVG filters, sliced autumn sun,
+  seeded pine-forest horizon.
+  Content source: root-rules.md and cards/*.md in this folder.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Root Rules Digest</title>
+<meta name="description" content="Unofficial one-page digest of Root: A Game of Woodland Might and Right (base game, Law of Root Oct 2025): map, setup, turn, battle, crafting, the four factions, dominance and the full 54-card deck.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f1a16;--paper:#fbf4e2;--white:#fffdf6;--grey:#e9dcbd;--mid:#c9b38a;
+  /* fox, cat and alli are darkened so small white text on them passes WCAG AA (4.5:1+) */
+  --fox:#c43d27;--rabbit:#f3c93a;--mouse:#f29a5b;--bird:#4fb0ba;
+  --cat:#b85a17;--eyrie:#2d55a6;--alli:#3a7d30;--vaga:#5d5d63;
+  --leaf:#2f5e3a;--moss:#7aa35a;
+}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:radial-gradient(circle,#e6c99a 1px,transparent 1.3px) 0 0/9px 9px,#f1e2c2;
+  color:var(--ink);font-family:"Barlow Condensed",sans-serif;font-size:17px;line-height:1.55;
+}
+a{color:inherit}
+img{max-width:100%}
+.page{max-width:1120px;margin:28px auto;background:var(--paper);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);overflow:hidden}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 22px;border-bottom:4px solid var(--ink);background:var(--white)}
+.logo{font:400 30px/1 "Bangers",sans-serif;letter-spacing:2px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo-mark{width:34px;height:34px;background:var(--fox);color:var(--white);border:3px solid var(--ink);display:grid;place-items:center;font:400 18px "Anton",sans-serif;transform:rotate(-6deg)}
+.nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:14px;padding:0 3px}
+.nav ul a:hover{background:var(--rabbit)}
+.btn{display:inline-block;cursor:pointer;white-space:nowrap;background:var(--ink);color:var(--white);border:3px solid var(--ink);padding:9px 20px;font:400 20px/1 "Bangers",sans-serif;letter-spacing:2px;text-decoration:none;box-shadow:4px 4px 0 var(--fox);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--fox)}
+.btn-ghost{background:var(--rabbit);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.btn-ghost:hover{box-shadow:6px 6px 0 var(--ink)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;min-height:520px;border-bottom:5px solid var(--ink);
+  background:radial-gradient(circle,#e9a35f 1.3px,transparent 1.5px) 0 0/8px 8px,#f6d9a6;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:24px;padding:52px 34px 270px}
+.hero:before{content:"";position:absolute;width:820px;height:820px;background:var(--paper);border:6px solid var(--ink);border-radius:50%;left:-330px;top:-300px}
+.hero-copy{position:relative;z-index:3;min-width:0}
+.issue{display:inline-block;background:var(--ink);color:var(--white);padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.hero h1{margin:20px 0 0;font:400 80px/.86 "Bangers",sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--rabbit);-webkit-text-stroke:7px var(--ink);paint-order:stroke fill;transform:rotate(-2deg)}
+.hero h1 .l2{color:var(--white)}
+.hero h1 .l3{color:var(--fox)}
+.hero h1 .sub{display:block;width:max-content;max-width:100%;color:var(--ink);-webkit-text-stroke:0;background:var(--white);border:3px solid var(--ink);padding:4px 10px 2px;margin:12px 0 0 50px;font:400 22px "Anton",sans-serif;letter-spacing:2px}
+.hero-lead{max-width:470px;margin:26px 0 22px;font-size:19px;background:var(--paper);padding:14px 18px}
+.hero-lead strong{background:var(--ink);color:var(--white);padding:0 5px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.cover-wrap{position:relative;z-index:3;align-self:center}
+.cover{margin:0;background:var(--white);padding:10px;box-shadow:10px 10px 0 var(--eyrie),10px 10px 0 4px var(--ink);transform:rotate(1.5deg);position:relative}
+.cover img{display:block;width:100%;height:auto;border:3px solid var(--ink)}
+.bubble{position:absolute;z-index:4;right:-6px;top:-44px;background:var(--white);border:3px solid var(--ink);border-radius:50%;padding:16px 22px;font:400 20px/1 "Bangers",sans-serif;letter-spacing:1px;transform:rotate(4deg)}
+.hero-copy>*{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+.hero-copy>*:nth-child(2){animation-delay:.08s}
+.hero-copy>*:nth-child(3){animation-delay:.16s}
+.hero-copy>*:nth-child(4){animation-delay:.24s}
+.cover-wrap{animation:rise 1.1s .35s cubic-bezier(.16,1,.3,1) both}
+@keyframes rise{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+.hero-sun{position:absolute;z-index:1;pointer-events:none;left:71%;bottom:130px;width:680px;aspect-ratio:1;transform:translate(-50%,50%);animation:sunrise 2.8s cubic-bezier(.16,1,.3,1) both}
+.hero-sun svg{width:100%;height:100%;overflow:visible;display:block}
+@keyframes sunrise{from{transform:translate(-50%,100%)}to{transform:translate(-50%,50%)}}
+.hero-horizon{position:absolute;left:0;right:0;bottom:0;height:250px;z-index:2;pointer-events:none}
+.forest{position:absolute;left:0;bottom:126px;width:100%;height:120px;display:block}
+.floor{position:absolute;left:0;right:0;bottom:0;height:130px;background:var(--moss);border-top:4px solid var(--ink);overflow:hidden;perspective:200px;perspective-origin:70% 0}
+.floor-plane{position:absolute;left:-100%;right:-100%;top:0;height:420%;transform-origin:50% 0;transform:rotateX(72deg);
+  background-image:repeating-linear-gradient(90deg,var(--leaf) 0 2px,transparent 2px 72px),repeating-linear-gradient(0deg,var(--leaf) 0 2px,transparent 2px 72px);
+  animation:floor 1.5s linear infinite}
+@keyframes floor{from{background-position:0 0,0 0}to{background-position:0 0,0 72px}}
+.floor:after{content:"";position:absolute;inset:0;background:linear-gradient(var(--moss),rgba(122,163,90,0) 55%)}
+.leafy{animation:sway 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes sway{50%{transform:rotate(1.6deg)}}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:4px solid var(--ink);background:var(--white)}
+.stat{padding:18px 20px;border-right:3px solid var(--ink);position:relative}
+.stat:last-child{border-right:0}
+.stat b{display:block;font:400 42px/1 "Anton",sans-serif}
+.stat span{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.stat:nth-child(1) b{color:var(--fox)}.stat:nth-child(2) b{color:var(--eyrie)}.stat:nth-child(3) b{color:var(--alli)}.stat:nth-child(4) b{color:var(--cat)}
+
+.wrap{padding:14px}
+.break{height:84px;position:relative;margin:14px 0;overflow:hidden;background:repeating-linear-gradient(-12deg,var(--white) 0,var(--white) 7px,var(--ink) 8px,var(--ink) 9px)}
+.break span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-2deg);white-space:nowrap;background:var(--rabbit);border:3px solid var(--ink);padding:4px 22px;font:400 32px "Bangers",sans-serif;letter-spacing:2px}
+.break.fox span{background:var(--fox);color:var(--white)}
+.break.bird span{background:var(--bird)}
+.break.mouse span{background:var(--mouse)}
+
+.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:6px 4px 14px}
+.section-title h2{margin:0;font:400 48px/.9 "Bangers",sans-serif;letter-spacing:2px;text-transform:uppercase}
+.section-title p{margin:0;max-width:430px;font-size:15px;text-align:right}
+.zoom-hint{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#6d5d44}
+
+/* FIGURES */
+.fig{position:relative;background:var(--white);padding:12px;margin:0}
+.fig a{display:block}
+.fig img{display:block;width:100%;height:auto;border:2px solid var(--ink);background:#fff}
+.fig figcaption{display:flex;gap:10px;align-items:baseline;margin-top:10px;font-size:15px;line-height:1.4}
+.fig-tag{flex:none;background:var(--ink);color:var(--white);font:400 14px "Anton",sans-serif;letter-spacing:1.5px;padding:3px 8px;transform:rotate(-3deg)}
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+
+/* LISTS BESIDE FIGURES */
+.board-map{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);gap:12px;align-items:start}
+.board-map.wide{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.zones{list-style:none;margin:0;padding:6px 0;background:var(--white);position:relative}
+.zones li{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:8px 14px;border-bottom:2px dashed var(--grey);font-size:15.5px;line-height:1.4}
+.zones li:last-child{border-bottom:0}
+.zones li:before{content:"▶";font:400 13px/28px "Anton",sans-serif;background:var(--ink);color:var(--white);text-align:center;height:28px}
+.zones b{text-transform:uppercase;letter-spacing:1px}
+.rule-box{background:var(--rabbit);padding:16px 18px;position:relative;margin-top:12px}
+.rule-box h3{margin:0 0 6px;font:400 26px "Bangers",sans-serif;letter-spacing:1px}
+.rule-box p{margin:0 0 6px}
+
+/* SUIT + FACTION CHIPS */
+.suit{display:inline-block;width:14px;height:14px;border:2px solid var(--ink);border-radius:50%;vertical-align:-2px;margin-right:3px}
+.suit.fox{background:var(--fox)}.suit.rabbit{background:var(--rabbit)}.suit.mouse{background:var(--mouse)}.suit.bird{background:var(--bird)}
+.dot{display:inline-grid;place-items:center;flex:none;width:24px;height:24px;border-radius:50%;font:400 13px/1 "Anton",sans-serif;border:2px solid var(--ink);color:#fff;vertical-align:middle}
+.dot.cat{background:var(--cat)}.dot.eyrie{background:var(--eyrie)}.dot.alli{background:var(--alli)}.dot.vaga{background:var(--vaga)}.dot.all{background:var(--rabbit);color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:12px 4px 0;padding:0;list-style:none;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase}
+.legend .dot,.legend .suit{margin-right:6px}
+
+/* STORY PANELS */
+.story{margin-top:26px;padding:30px 26px 26px;position:relative;background:radial-gradient(circle at 90% 15%,#e8d6ae 1px,transparent 1.4px) 0 0/6px 6px}
+.story[data-label]:before{content:attr(data-label);position:absolute;right:14px;top:-20px;z-index:7;background:var(--ink);color:var(--white);padding:3px 13px;font:400 18px "Anton",sans-serif;letter-spacing:2px;transform:rotate(2deg)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.step{background:var(--white);padding:16px;position:relative}
+.step-n{font:400 64px/.8 "Anton",sans-serif;color:var(--grey);position:absolute;right:10px;top:8px}
+.step h3{margin:0 0 8px;font:400 24px "Bangers",sans-serif;letter-spacing:1px;position:relative}
+.step p,.step ul{margin:0 0 8px;position:relative}
+.step ul{padding-left:18px}
+.step.birdsong{border-top:10px solid var(--rabbit)}
+.step.daylight{border-top:10px solid var(--mouse)}
+.step.evening{border-top:10px solid var(--eyrie)}
+.story-note{margin:20px 0 0;max-width:800px}
+.story-note b{background:var(--ink);color:var(--white);padding:0 4px}
+.chip{display:inline-block;background:var(--ink);color:var(--white);font:700 15px "JetBrains Mono",monospace;padding:4px 10px;transform:rotate(-1.5deg)}
+
+/* CHECKLISTS */
+.checklists{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.cl{background:var(--white);padding:14px 16px 10px;position:relative}
+.cl.main{grid-column:1/-1}
+.cl h3{display:flex;align-items:center;gap:8px;margin:0 0 8px;font:400 22px "Bangers",sans-serif;letter-spacing:1px}
+.cl h3 small{font:700 11px "Barlow Condensed";letter-spacing:2px;text-transform:uppercase;color:#6d5d44;margin-left:auto}
+.cl ol{margin:0;padding:0;list-style:none}
+.cl.main ol{columns:2;column-gap:28px}
+.cl li{display:grid;grid-template-columns:24px 1fr;gap:8px;padding:5px 0;font-size:14.5px;line-height:1.35;border-bottom:1px dashed var(--grey);break-inside:avoid}
+.cl li .dot{width:22px;height:22px;font-size:12px}
+
+/* FACTION CARDS */
+.classes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{position:relative;overflow:hidden;background:var(--white)}
+.art{position:relative;overflow:hidden;border-bottom:4px solid var(--ink);background:var(--ink)}
+.art img{display:block;width:100%;height:auto;aspect-ratio:5/1;object-fit:cover}
+.num{position:absolute;z-index:4;left:10px;top:10px;width:42px;height:42px;background:var(--white);color:var(--ink);border:3px solid var(--ink);display:grid;place-items:center;font:400 20px "Anton",sans-serif;transform:rotate(-5deg)}
+.info{padding:16px 18px 20px}
+.info h3{margin:0 0 2px;font:400 32px/.95 "Bangers",sans-serif;letter-spacing:1px;text-transform:uppercase}
+.role{display:inline-block;color:var(--white);padding:2px 8px;margin:4px 0 12px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--ink)}
+.card.cat .role,.card.cat .num{background:var(--cat);color:var(--white)}
+.card.eyrie .role,.card.eyrie .num{background:var(--eyrie);color:var(--white)}
+.card.alli .role,.card.alli .num{background:var(--alli);color:var(--white)}
+.card.vaga .role,.card.vaga .num{background:var(--vaga);color:var(--white)}
+.card.cat h3{color:var(--cat)}.card.eyrie h3{color:var(--eyrie)}.card.alli h3{color:var(--alli)}.card.vaga h3{color:var(--vaga)}
+.info p{margin:0}
+.facts{margin-top:13px;padding-top:10px;border-top:2px dashed var(--ink);font-size:15px}
+.facts b{text-transform:uppercase;letter-spacing:1px}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;background:var(--white);position:relative}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{border:2.5px solid var(--ink);padding:7px 10px;vertical-align:top;text-align:left}
+thead th{background:var(--ink);color:var(--white);font:400 16px "Anton",sans-serif;letter-spacing:1.5px;text-transform:uppercase}
+tbody th{font:400 19px/1.1 "Bangers",sans-serif;letter-spacing:1px;white-space:nowrap;background:var(--paper)}
+.nums td,.nums th{text-align:center}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+
+/* PLAYBOOKS */
+.pb{margin-top:22px;position:relative;background:var(--white)}
+.pb-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;color:var(--white);padding:12px 18px;border-bottom:3px solid var(--ink)}
+.pb.cat .pb-head{background:var(--cat)}.pb.eyrie .pb-head{background:var(--eyrie)}.pb.alli .pb-head{background:var(--alli)}.pb.vaga .pb-head{background:var(--vaga)}
+.pb-head h3{margin:0;font:400 34px/1 "Bangers",sans-serif;letter-spacing:1.5px;text-transform:uppercase;-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill}
+.pb-head p{margin:0 0 0 auto;font-size:15.5px;max-width:520px;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.pb-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.pb-round{padding:16px 18px 18px;border-right:3px solid var(--ink)}
+.pb-ex{padding:16px 18px 18px;display:grid;gap:14px;align-content:start}
+.pb-label{display:inline-block;background:var(--ink);color:var(--white);padding:2px 9px;margin-bottom:10px;font:400 14px "Anton",sans-serif;letter-spacing:2px;text-transform:uppercase}
+.phases{margin:0;display:grid;gap:0}
+.phases div{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:8px 0;border-bottom:2px dashed var(--grey)}
+.phases div:last-child{border-bottom:0}
+.phases dt{font:400 15px/1.3 "Anton",sans-serif;letter-spacing:1px;text-transform:uppercase}
+.phases dd{margin:0;font-size:15px;line-height:1.42}
+.phases dd ul{margin:4px 0 0;padding-left:16px}
+.ex{border-left:5px solid var(--ink);padding:2px 0 2px 14px}
+.pb.cat .ex{border-color:var(--cat)}.pb.eyrie .ex{border-color:var(--eyrie)}.pb.alli .ex{border-color:var(--alli)}.pb.vaga .ex{border-color:var(--vaga)}
+.ex h4{margin:0 0 4px;font:400 21px/1.1 "Bangers",sans-serif;letter-spacing:1px}
+.ex p{margin:0 0 6px;font-size:15px;line-height:1.45}
+.ex ul{margin:0;padding-left:18px;font-size:15px;line-height:1.45}
+.tip{background:repeating-linear-gradient(-45deg,transparent 0,transparent 3px,#f3e7c9 3px,#f3e7c9 5px);border:2px dashed var(--ink);padding:10px 12px;font-size:15px;line-height:1.45}
+.tip b{text-transform:uppercase;letter-spacing:1px}
+.pb .tbl-wrap td,.pb .tbl-wrap th{padding:4px 7px;font-size:14px}
+.pb .tbl-wrap tbody th{font-size:16px}
+.board-note{font-size:13.5px;font-weight:600;font-style:italic;color:#6d5d44;margin:4px 0 0}
+.mini-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mini-cards.three{grid-template-columns:repeat(3,1fr)}
+.mini-cards img{display:block;width:100%;height:auto;border:2px solid var(--ink);border-radius:6px}
+/* SIMULATION (block written by sim/showcase.py) */
+.turn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pb.sim .pb-head{background:var(--ink)}
+.pb.sim .ex{border-color:var(--fox)}
+.sim-list{margin:0;padding-left:18px;font-size:14px;line-height:1.45}
+.sim-list li{margin:2px 0}
+
+/* CARD GALLERY */
+.deck-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 4px 12px}
+.deck-tabs button{cursor:pointer;font:400 18px "Bangers",sans-serif;letter-spacing:1.5px;padding:6px 14px;border:3px solid var(--ink);background:var(--white);box-shadow:3px 3px 0 var(--ink)}
+.deck-tabs button[aria-pressed="true"]{background:var(--ink);color:var(--white)}
+.deck-tabs button[data-suit="fox"][aria-pressed="true"]{background:var(--fox)}
+.deck-tabs button[data-suit="rabbit"][aria-pressed="true"]{background:var(--rabbit);color:var(--ink)}
+.deck-tabs button[data-suit="mouse"][aria-pressed="true"]{background:var(--mouse);color:var(--ink)}
+.deck-tabs button[data-suit="bird"][aria-pressed="true"]{background:var(--bird);color:var(--ink)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;background:var(--white);padding:14px;position:relative}
+.gcard{margin:0;position:relative}
+.gcard img{display:block;width:100%;height:auto;border:2px solid var(--ink);border-radius:8px;background:#ddd}
+.gcard figcaption{font-size:13.5px;line-height:1.3;margin-top:5px}
+.gcard figcaption b{display:block;font-size:14.5px}
+.copies{position:absolute;top:-8px;right:-6px;z-index:2;background:var(--ink);color:var(--white);font:400 16px/1 "Anton",sans-serif;padding:5px 7px;border:2px solid var(--white);transform:rotate(6deg)}
+.gcard[hidden]{display:none}
+
+/* DOMINANCE END PANEL */
+.end{margin-top:26px;position:relative;overflow:hidden;background:#24304f;color:var(--white);border:3px solid var(--ink)}
+.end:before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-radial-gradient(circle at 0 0,transparent 0 26px,rgba(255,255,255,.05) 26px 28px)}
+.end-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+.end-copy{padding:44px 20px 40px 42px;display:flex;flex-direction:column;justify-content:center}
+.end-kicker{align-self:flex-start;border:2px solid var(--white);padding:4px 11px;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.end-title{margin:20px 0 0;font:400 78px/.86 "Bangers",sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--rabbit);text-shadow:5px 5px 0 var(--ink);transform:rotate(-2deg);transform-origin:left}
+.end-sub{align-self:flex-start;margin:18px 0 0 34px;background:var(--paper);color:var(--ink);padding:5px 12px 3px;font:400 20px "Anton",sans-serif;letter-spacing:1.5px;text-transform:uppercase;transform:rotate(-1.5deg)}
+.end-list{margin:22px 0 0;padding-left:22px;color:#e2e6f2;max-width:500px}
+.end-list li{margin-bottom:7px}
+.end-list b{color:var(--white)}
+.end-art{position:relative;border-left:3px solid var(--ink);padding:34px 26px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:center;background:radial-gradient(circle,rgba(255,255,255,.12) 1px,transparent 1.3px) 0 0/7px 7px}
+.end-art img{display:block;width:100%;height:auto;border:3px solid var(--ink);border-radius:8px;box-shadow:6px 6px 0 var(--ink)}
+.end-art img:nth-child(odd){transform:rotate(-3deg)}
+.end-art img:nth-child(even){transform:rotate(3deg) translateY(14px)}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.faq-item{position:relative;background:var(--white)}
+.faq-item:after{content:"";position:absolute;inset:0;border:3px solid var(--ink);filter:url(#sketchy);pointer-events:none}
+.faq-item summary{list-style:none;display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:focus-visible{outline:3px dashed var(--ink);outline-offset:-8px}
+.faq-q{flex:none;background:var(--fox);color:var(--white);border:2px solid var(--ink);font:400 15px/1 "Anton",sans-serif;letter-spacing:1px;padding:6px 8px;transform:rotate(-4deg);filter:url(#sketchy-sm)}
+.faq-text{flex:1;font:400 22px/1.3 "Bangers",sans-serif;letter-spacing:1px}
+.faq-icon{flex:none;width:32px;height:32px;border:3px solid var(--ink);border-radius:50%;position:relative;transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s}
+.faq-icon:before,.faq-icon:after{content:"";position:absolute;left:50%;top:50%;width:12px;height:3px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s}
+.faq-icon:after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq-item[open] .faq-icon{background:var(--ink);transform:rotate(180deg)}
+.faq-item[open] .faq-icon:before,.faq-item[open] .faq-icon:after{background:var(--white)}
+.faq-item[open] .faq-icon:after{transform:translate(-50%,-50%) rotate(0deg)}
+.faq-item[open] summary{border-bottom:2px dashed var(--ink)}
+.faq-a{padding:16px 18px 20px}
+.faq-item[open] .faq-a{animation:faqIn .4s cubic-bezier(.16,1,.3,1)}
+@keyframes faqIn{from{opacity:0;translate:0 -6px}to{opacity:1;translate:0 0}}
+.faq-a p{margin:0;padding-left:14px;border-left:4px solid var(--fox)}
+
+/* FOOTER */
+.foot{padding:12px 16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:4px solid var(--ink);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:var(--white)}
+.foot nav{display:flex;gap:16px;flex-wrap:wrap}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* SKETCH LAYER: wobbly outlines as overlays so text stays crisp */
+.card:after,.step:after,.break:after,.story:after,.tbl-wrap:after,.fig:after,.zones:after,.cl:after,.pb:after,.rule-box:after,.gallery:after,.cover:after{
+  content:"";position:absolute;inset:0;z-index:6;pointer-events:none;border:3px solid var(--ink);filter:url(#sketchy)}
+.btn,.logo-mark,.issue,.num,.bubble,.break span,.role,.stat b,.step-n,.end-kicker,.end-sub,.hero h1 .sub,.chip,.fig-tag,.copies{filter:url(#sketchy-sm)}
+.hero:before{filter:url(#sketchy)}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .pb-body{grid-template-columns:minmax(0,1fr)}
+  .pb-round{border-right:0;border-bottom:3px solid var(--ink)}
+  .pb-head p{margin-left:0}
+  .figs,.board-map,.board-map.wide{grid-template-columns:minmax(0,1fr)}
+  .checklists{grid-template-columns:1fr 1fr}
+  .hero{grid-template-columns:minmax(0,1fr);padding:40px 22px 250px}
+  .hero h1{font-size:64px}
+  .cover-wrap{margin-top:40px;max-width:520px}
+  .hero-sun{left:50%;width:600px}
+  .floor{perspective-origin:50% 0}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:3px solid var(--ink)}
+  .steps,.faq-grid,.mini{grid-template-columns:1fr}
+  .turn-grid{grid-template-columns:1fr 1fr}
+  .end-inner{grid-template-columns:minmax(0,1fr)}
+  .end-copy{padding:40px 24px 24px}
+  .end-art{border-left:0;border-top:3px solid var(--ink)}
+}
+@media(max-width:640px){
+  .page{margin:0;border-width:0 0 4px;box-shadow:none}
+  .nav{padding:12px 16px}
+  .nav ul{display:none}
+  .hero{padding:36px 16px 220px}
+  .hero h1{font-size:50px;-webkit-text-stroke:5px var(--ink)}
+  .hero h1 .sub{width:auto;margin-left:0;font-size:18px}
+  .hero-sun{width:470px;bottom:110px}
+  .floor{height:110px}
+  .forest{bottom:106px;height:100px}
+  .bubble{right:0;top:-40px;font-size:16px;padding:12px 16px}
+  .section-title{flex-direction:column;align-items:flex-start}
+  .section-title p{text-align:left}
+  .section-title h2{font-size:40px}
+  .classes,.checklists,.turn-grid{grid-template-columns:1fr}
+  .cl.main ol{columns:1}
+  .phases div{grid-template-columns:1fr;gap:2px}
+  .pb-head h3{font-size:28px}
+  .break span{font-size:22px;padding:3px 14px}
+  .end-title{font-size:50px}
+  .end-sub{margin-left:12px;font-size:17px}
+  .faq-text{font-size:20px}
+  .story{padding:30px 14px 18px}
+  .wrap{padding:10px}
+  .mini-cards{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-sun,.floor-plane,.leafy,.hero-copy>*,.cover-wrap,.faq-a{animation:none!important}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="sketchy" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="turbulence" baseFrequency="0.035 0.042" numOctaves="4" result="noise" seed="42"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="sketchy-sm" x="-18%" y="-18%" width="136%" height="136%">
+      <feTurbulence type="turbulence" baseFrequency="0.06" numOctaves="3" result="noise" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="page">
+
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="Root rules digest, top"><span class="logo-mark">R</span>ROOT</a>
+    <ul>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#setup">Setup</a></li>
+      <li><a href="#factions">Factions</a></li>
+      <li><a href="#turn">Turn</a></li>
+      <li><a href="#battle">Battle</a></li>
+      <li><a href="#deck">Deck</a></li>
+      <li><a href="#dominance">Dominance</a></li>
+      <li><a href="#simulation">Sim</a></li>
+    </ul>
+    <a class="btn" href="#playbooks">Playbooks</a>
+  </header>
+
+  <main>
+  <section class="hero" id="top">
+    <div class="hero-sun" aria-hidden="true">
+      <svg viewBox="0 0 640 640">
+        <circle cx="320" cy="320" r="276" fill="#fbf4e2" stroke="#1f1a16" stroke-width="3"/>
+        <circle cx="320" cy="320" r="276" fill="none" stroke="#1f1a16" stroke-width="2">
+          <animate attributeName="r" values="276;380" dur="6s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".9;0" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="320" cy="320" r="276" fill="none" stroke="#1f1a16" stroke-width="2">
+          <animate attributeName="r" values="276;380" dur="6s" begin="-3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values=".9;0" dur="6s" begin="-3s" repeatCount="indefinite"/>
+        </circle>
+        <g data-sun data-cx="320" data-cy="320" data-r="252" data-bars="8" data-dur="9" data-stroke="4" data-start=".04" data-end=".5"></g>
+      </svg>
+    </div>
+    <div class="hero-horizon" aria-hidden="true">
+      <svg class="forest" viewBox="0 0 1200 120" preserveAspectRatio="xMidYMax slice">
+        <g data-forest data-w="1200" data-base="120" data-min="40" data-max="112" data-seed="23"></g>
+      </svg>
+      <div class="floor"><div class="floor-plane"></div></div>
+    </div>
+    <div class="hero-copy">
+      <div class="issue">Rules digest · Law of Root Oct 2025 · Base game · Unofficial</div>
+      <h1>
+        Might<br><span class="l2">and</span> <span class="l3">Right</span><br>in the wood!
+        <span class="sub">A Game of Woodland Might and Right</span>
+      </h1>
+      <p class="hero-lead">
+        Root is an asymmetric war game for <strong>2–4 players</strong>. Cats build an empire, birds obey
+        their Decree, the Alliance stirs up revolt and a lone Vagabond plays every side. Everyone shares one
+        deck and one map of <strong>12 clearings</strong>, and the first to <strong>30 points</strong> wins.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn" href="#setup">Setup guide</a>
+        <a class="btn btn-ghost" href="#battle">How battle works</a>
+      </div>
+    </div>
+
+    <div class="cover-wrap">
+      <div class="bubble" aria-hidden="true">Birds are wild!</div>
+      <figure class="cover">
+        <img src="img/cover.jpg" alt="Cover art of the Learning to Play booklet: a mouse with a scroll, a cardinal archer, a grinning cat with a staff and a raccoon Vagabond in an autumn forest" width="900" height="1082">
+      </figure>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><b>2–4</b><span>Players (base box)</span></div>
+    <div class="stat"><b>30</b><span>Points to win</span></div>
+    <div class="stat"><b>12</b><span>Clearings</span></div>
+    <div class="stat"><b>54</b><span>Shared cards</span></div>
+  </div>
+
+  <div class="wrap">
+
+    <div class="break"><span>Welcome to the Woodland</span></div>
+
+    <!-- MAP -->
+    <section id="map">
+      <div class="section-title">
+        <h2>The map</h2>
+        <p>Twelve clearings linked by paths. Everything that happens on the board is about who <b>rules</b> which clearing. <span class="zoom-hint">Click any picture to open it full size.</span></p>
+      </div>
+      <div class="board-map">
+        <figure class="fig">
+          <a href="img/map-anatomy.jpg" target="_blank"><img src="img/map-anatomy.jpg" alt="Learning to Play page 5: a corner of the Autumn map with a path, a forest, a building slot and a clearing labelled" loading="lazy" width="375" height="595"></a>
+          <figcaption><span class="fig-tag">FIG. 01</span><span>Path, forest, slot and clearing on the Autumn map.</span></figcaption>
+        </figure>
+        <div>
+          <ol class="zones">
+            <li><span><b>Clearings</b> · 12 of them, each with a suit: <span class="suit fox"></span>fox, <span class="suit rabbit"></span>rabbit or <span class="suit mouse"></span>mouse. Card suits match clearing suits.</span></li>
+            <li><span><b>Paths</b> · two clearings linked by a path are adjacent. A move goes one path.</span></li>
+            <li><span><b>Slots</b> · white boxes. Each building fills one; a full clearing takes no more buildings.</span></li>
+            <li><span><b>Ruins</b> · fill the four "R" slots at the start. Only the Vagabond can explore them empty.</span></li>
+            <li><span><b>Forests</b> · the areas between paths. Only the Vagabond can stand in them.</span></li>
+            <li><span><b>Corners</b> · four corner clearings: starting spots, and the target of bird dominance.</span></li>
+            <li><span><b>Autumn totals</b> · 12 clearings, 23 slots, 18 paths, 7 forests.</span></li>
+            <li><span><b>Rivers</b> · do nothing in the base game (on Winter they split forests).</span></li>
+          </ol>
+          <div class="rule-box">
+            <h3>Who rules?</h3>
+            <p>You rule a clearing if you have <b>more warriors + buildings</b> there than each other player. Tokens (wood, sympathy, the keep) and the Vagabond pawn don't count. <b>A tie means nobody rules</b>, except the Eyrie, who win ties where they have a piece.</p>
+            <p>To <b>move</b>, you must rule the clearing you leave <b>or</b> the one you enter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETUP -->
+    <section class="story" id="setup" data-label="SETUP">
+      <h2 class="sr-only">Setup</h2>
+      <div class="board-map wide">
+        <figure class="fig">
+          <a href="img/map-setup.jpg" target="_blank"><img src="img/map-setup.jpg" alt="Walking Through Root page 3: the Autumn map after setup, with the Marquise keep in the top-left corner, an orange cat warrior in every clearing but the bottom-right, the Eyrie roost and six blue warriors in the bottom-right corner, the Vagabond pawn in a central forest and the item supply along the top" loading="lazy" width="1122" height="1009"></a>
+          <figcaption><span class="fig-tag">FIG. 02</span><span>A 4-player start: keep in the top-left, Marquise warriors everywhere but the opposite corner, the Eyrie in that opposite corner, the Vagabond in a forest. The Alliance starts with nothing on the map.</span></figcaption>
+        </figure>
+        <ol class="zones">
+          <li><span><b>Seats</b> · random first player and seating.</span></li>
+          <li><span><b>Score markers</b> · all on 0.</span></li>
+          <li><span><b>Hands</b> · shuffle; everyone draws <b>3</b>. In a 2-player game, take out the 4 dominance cards first.</span></li>
+          <li><span><b>Ruins</b> · in the four "R" slots.</span></li>
+          <li><span><b>Item supply</b> · 2 boots, 2 bags, 1 crossbow, 1 hammer, 2 swords, 2 tea, 2 coins on the top edge.</span></li>
+          <li><span><b>Dice &amp; overviews</b> · near the map.</span></li>
+          <li><span><b>Factions</b> set up in order: Marquise → Eyrie → Alliance → Vagabond.</span></li>
+        </ol>
+      </div>
+
+      <div class="checklists">
+        <div class="cl">
+          <h3><span class="dot cat">A</span>Marquise<small>first</small></h3>
+          <ol>
+            <li><span class="dot cat">1</span><span>Supply: 25 warriors, 8 wood.</span></li>
+            <li><span class="dot cat">2</span><span>Keep in <b>any corner</b>.</span></li>
+            <li><span class="dot cat">3</span><span>1 warrior in <b>every clearing</b> except the opposite corner.</span></li>
+            <li><span class="dot cat">4</span><span>1 sawmill, 1 workshop, 1 recruiter in the keep clearing and/or next to it.</span></li>
+            <li><span class="dot cat">5</span><span>Other 15 buildings on the tracks, right to left.</span></li>
+          </ol>
+        </div>
+        <div class="cl">
+          <h3><span class="dot eyrie">B</span>Eyrie<small>second</small></h3>
+          <ol>
+            <li><span class="dot eyrie">1</span><span>Supply: 20 warriors.</span></li>
+            <li><span class="dot eyrie">2</span><span>1 roost + 6 warriors in a free corner, <b>opposite</b> the keep if possible.</span></li>
+            <li><span class="dot eyrie">3</span><span>Pick 1 of 4 leaders; the rest face up beside you.</span></li>
+            <li><span class="dot eyrie">4</span><span>Tuck the 2 Loyal Viziers into the columns on the leader.</span></li>
+            <li><span class="dot eyrie">5</span><span>6 roosts on the track, right to left.</span></li>
+          </ol>
+        </div>
+        <div class="cl">
+          <h3><span class="dot alli">C</span>Alliance<small>third</small></h3>
+          <ol>
+            <li><span class="dot alli">1</span><span>Supply: 10 warriors.</span></li>
+            <li><span class="dot alli">2</span><span>3 bases in the Bases box.</span></li>
+            <li><span class="dot alli">3</span><span>10 sympathy on the track.</span></li>
+            <li><span class="dot alli">4</span><span>Draw 3 cards <b>face down as supporters</b>.</span></li>
+            <li><span class="dot alli">5</span><span>Nothing on the map yet.</span></li>
+          </ol>
+        </div>
+        <div class="cl">
+          <h3><span class="dot vaga">D</span>Vagabond<small>fourth</small></h3>
+          <ol>
+            <li><span class="dot vaga">1</span><span>Pick a character: Thief, Tinker or Ranger.</span></li>
+            <li><span class="dot vaga">2</span><span>Pawn in <b>any forest</b>.</span></li>
+            <li><span class="dot vaga">3</span><span>Shuffle quests; 3 face up.</span></li>
+            <li><span class="dot vaga">4</span><span>One "R" item (bag, boot, hammer, sword) under each ruin, shuffled, back on the map.</span></li>
+            <li><span class="dot vaga">5</span><span>Starting items from the character; relationships on Indifferent.</span></li>
+          </ol>
+        </div>
+      </div>
+      <p class="story-note"><b>Which factions?</b> Add up their <b>reach</b>: Marquise 10, Eyrie 7, Vagabond 5, Alliance 3. You need 17+ for 2 players, 18+ for 3 and 21+ for 4. With the base box that means Marquise + Eyrie for 2 players, and the Marquise plus any two for 3. The <b>Winter map</b> (back of the board) deals the 12 suit markers onto the clearings at random; <i>Learning to Play</i> recommends it only for experienced players.</p>
+    </section>
+
+    <div class="break fox"><span>Four factions enter the forest!</span></div>
+
+    <!-- FACTIONS -->
+    <section id="factions">
+      <div class="section-title">
+        <h2>The cast</h2>
+        <p>Every faction plays a different game. Two are <b>militant</b> (start big, fight for territory), two are <b>insurgent</b> (start small, sneak up). <a href="#playbooks"><b>Full playbooks ↓</b></a></p>
+      </div>
+      <div class="classes">
+        <article class="card cat">
+          <div class="art"><img src="img/banner-marquise.jpg" alt="The Marquise de Cat, a grinning tabby, and a cat soldier" loading="lazy" width="585" height="117"><span class="num">A</span></div>
+          <div class="info">
+            <h3>Marquise de Cat</h3><span class="role">Militant · reach 10 · orange</span>
+            <p>Has already occupied the Woodland. Spends <b>wood</b> to place sawmills, workshops and recruiters; each building scores more than the last of its type.</p>
+            <div class="facts"><b>Abilities:</b> the Keep (only she may place pieces in its clearing) · Field Hospitals (spend a matching card to send dying warriors back to the keep).<br><b>Weak spot:</b> wood only flows through clearings she rules.</div>
+          </div>
+        </article>
+        <article class="card eyrie">
+          <div class="art"><img src="img/banner-eyrie.jpg" alt="Two Eyrie birds, a woodpecker and an orange hawk" loading="lazy" width="585" height="117"><span class="num">B</span></div>
+          <div class="info">
+            <h3>Eyrie Dynasties</h3><span class="role">Militant · reach 7 · blue</span>
+            <p>Score every Evening for the <b>roosts</b> on the map. Each turn they add cards to their <b>Decree</b> and must carry out every order on it, or fall into turmoil.</p>
+            <div class="facts"><b>Abilities:</b> Lords of the Forest (rule tied clearings) · Disdain for Trade (items score only 1).<br><b>Weak spot:</b> one impossible order costs them points and their leader.</div>
+          </div>
+        </article>
+        <article class="card alli">
+          <div class="art"><img src="img/banner-alliance.jpg" alt="A wide-eyed rabbit and other Woodland creatures in green" loading="lazy" width="585" height="117"><span class="num">C</span></div>
+          <div class="info">
+            <h3>Woodland Alliance</h3><span class="role">Insurgent · reach 3 · green</span>
+            <p>Spends <b>supporters</b> to spread <b>sympathy</b>; each token scores. Two supporters spark a <b>revolt</b> that wipes a clearing and founds a base.</p>
+            <div class="facts"><b>Abilities:</b> Guerrilla War (defends with the higher roll) · Outrage (anyone who moves into or removes sympathy pays a card).<br><b>Weak spot:</b> losing a base costs supporters and officers.</div>
+          </div>
+        </article>
+        <article class="card vaga">
+          <div class="art"><img src="img/banner-vagabond.jpg" alt="The raccoon Vagabond peeking over the page" loading="lazy" width="585" height="117"><span class="num">D</span></div>
+          <div class="info">
+            <h3>Vagabond</h3><span class="role">Insurgent · reach 5 · grey</span>
+            <p>One pawn with a pack of <b>items</b>. Scores by <b>aiding</b> factions, beating up <b>hostile</b> ones and finishing <b>quests</b>.</p>
+            <div class="facts"><b>Abilities:</b> Lone Wanderer (not a warrior, never rules, can't be removed) · Nimble (moves whoever rules).<br><b>Weak spot:</b> every hit damages an item.</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TURN -->
+    <section class="story" id="turn" data-label="A TURN">
+      <h2 class="sr-only">Turn structure</h2>
+      <div class="steps">
+        <div class="step birdsong"><span class="step-n" aria-hidden="true">1</span>
+          <h3>Birdsong</h3>
+          <p>Morning upkeep. Each faction does its own thing:</p>
+          <ul><li>Marquise: wood at each sawmill.</li><li>Eyrie: add 1–2 cards to the Decree.</li><li>Alliance: revolt, spread sympathy.</li><li>Vagabond: refresh items, slip.</li></ul>
+          <p>Dominance wins are checked at the <b>start</b> of your Birdsong.</p>
+        </div>
+        <div class="step daylight"><span class="step-n" aria-hidden="true">2</span>
+          <h3>Daylight</h3>
+          <p>The main phase: <b>craft</b>, move, battle, build, recruit. Each faction has its own list of actions and limits.</p>
+          <p>Dominance cards are played and taken in Daylight.</p>
+        </div>
+        <div class="step evening"><span class="step-n" aria-hidden="true">3</span>
+          <h3>Evening</h3>
+          <p>Score (Eyrie), take military operations (Alliance) or rest (Vagabond). Then <b>draw 1 card + bonuses</b> and <b>discard down to 5</b>.</p>
+          <p>Then the next player clockwise starts.</p>
+        </div>
+      </div>
+      <p class="story-note"><b>Winning:</b> the first to <b>30 points</b> wins at once, even in someone else's turn. <b>Anyone</b> scores <b>+1 for each enemy building or token removed</b>, and the printed points for crafting an item.</p>
+    </section>
+
+    <!-- BATTLE -->
+    <section class="story" id="battle" data-label="BATTLE">
+      <h2 class="sr-only">Battle</h2>
+      <div class="board-map">
+        <figure class="fig">
+          <a href="img/battle-example.jpg" target="_blank"><img src="img/battle-example.jpg" alt="Learning to Play page 8, battle example: the Eyrie attack the Marquise in a mouse clearing, roll 3 and 0, deal two hits capped by their two warriors and score a point for the workshop removed" loading="lazy" width="370" height="822"></a>
+          <figcaption><span class="fig-tag">FIG. 03</span><span>The Eyrie roll 3 and 0 but have only 2 warriors, so they deal 2 hits: one cat warrior, then the workshop (+1 point).</span></figcaption>
+        </figure>
+        <div>
+          <div class="steps">
+            <div class="step"><span class="step-n" aria-hidden="true">1</span><h3>Pick a fight</h3><p>Any clearing with your warriors; any enemy there defends. No rule needed.</p></div>
+            <div class="step"><span class="step-n" aria-hidden="true">2</span><h3>Ambush?</h3><p>The defender may play a matching ambush card: <b>2 hits at once</b>. The attacker can cancel it with their own matching ambush.</p></div>
+            <div class="step"><span class="step-n" aria-hidden="true">3</span><h3>Roll</h3><p>Both dice. <b>Attacker takes the higher</b>, defender the lower (the Alliance reverses this when defending).</p></div>
+            <div class="step"><span class="step-n" aria-hidden="true">4</span><h3>Cap</h3><p>Rolled hits can't exceed <b>your warriors in the clearing</b>. The Vagabond's cap is his undamaged swords.</p></div>
+            <div class="step"><span class="step-n" aria-hidden="true">5</span><h3>Extras</h3><p>Card effects add <b>extra hits</b> (no cap). A defender with no warriors is <b>defenseless</b>: +1 hit.</p></div>
+            <div class="step"><span class="step-n" aria-hidden="true">6</span><h3>Remove</h3><p>The side taking hits chooses, but <b>warriors go first</b>, then buildings and tokens. +1 point per enemy building or token.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRAFTING -->
+    <section class="story" id="crafting" data-label="CRAFTING">
+      <h2 class="sr-only">Crafting</h2>
+      <div class="board-map wide">
+        <div>
+          <ol class="zones">
+            <li><span><b>Cost</b> · the icons in the card's bottom-left corner. Activate one crafting piece per icon, in a clearing of that suit. "?" means any suit.</span></li>
+            <li><span><b>Crafting pieces</b> · Marquise workshops, Eyrie roosts, Alliance sympathy, Vagabond hammers. Each works <b>once per turn</b> (the Vagabond's hammers don't have this limit).</span></li>
+            <li><span><b>Items</b> · take the item from the map supply into your Crafted Items box and score the points. <b>No item left in the supply, no craft.</b></span></li>
+            <li><span><b>Persistent effects</b> stay in your play area. No duplicates.</span></li>
+            <li><span><b>One-shots</b> (the three Favor cards) remove every enemy piece in clearings of their suit.</span></li>
+          </ol>
+          <p class="story-note">Crafted items don't help most factions directly. They score points, and the Vagabond can take one when he aids you, which is why he likes friends who craft.</p>
+        </div>
+        <figure class="fig">
+          <a href="img/pieces.jpg" target="_blank"><img src="img/pieces.jpg" alt="Learning to Play page 24, piece glossary: warriors, tokens, buildings, markers, ruins, items, the Vagabond pawn and each faction's crafting piece" loading="lazy" width="900" height="775"></a>
+          <figcaption><span class="fig-tag">FIG. 04</span><span>Piece glossary: warriors and buildings count for rule, tokens do not. Bottom right: each faction's crafting piece.</span></figcaption>
+        </figure>
+      </div>
+      <div class="mini">
+        <div class="tbl-wrap">
+          <table class="nums">
+            <thead><tr><th>Item</th><th>Cards</th><th>In supply</th><th>Points</th></tr></thead>
+            <tbody>
+              <tr><th>Boots</th><td>4</td><td>2</td><td>+1</td></tr>
+              <tr><th>Bag</th><td>4</td><td>2</td><td>+1</td></tr>
+              <tr><th>Crossbow</th><td>2</td><td>1</td><td>+1</td></tr>
+              <tr><th>Hammer</th><td>1</td><td>1</td><td>+2</td></tr>
+              <tr><th>Sword</th><td>3</td><td>2</td><td>+2</td></tr>
+              <tr><th>Tea</th><td>3</td><td>2</td><td>+2</td></tr>
+              <tr><th>Coins</th><td>3</td><td>2</td><td>+3</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Card type</th><th>How many</th></tr></thead>
+            <tbody>
+              <tr><th>Item cards</th><td>20 cards, but only 12 items in the supply. Late in the game, item cards become suit-only.</td></tr>
+              <tr><th>Persistent</th><td>22 cards: Armorers, Sappers, Brutal Tactics, Royal Claim, Cobbler, Command Warren, Better Burrow Bank, Codebreakers, Scouting Party, Stand and Deliver!, Tax Collector.</td></tr>
+              <tr><th>Favors</th><td>3 cards, one per clearing suit, each costing three of that suit.</td></tr>
+              <tr><th>Not craftable</th><td>5 ambush + 4 dominance.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="break bird"><span>Know your faction</span></div>
+
+    <!-- PLAYBOOKS -->
+    <section id="playbooks">
+      <div class="section-title">
+        <h2>Playbooks</h2>
+        <p>Each faction's full turn, its board numbers and how it scores. Numbers marked <b>board</b> are printed on the faction board, not in the Law. Check them against your own.</p>
+      </div>
+
+      <!-- MARQUISE -->
+      <article class="pb cat" id="pb-marquise">
+        <div class="pb-head"><span class="dot cat">A</span><h3>Marquise de Cat</h3><p>Industry and occupation. Score by building; build with wood; move wood through clearings you rule.</p></div>
+        <div class="pb-body">
+          <div class="pb-round">
+            <span class="pb-label">Her turn</span>
+            <dl class="phases">
+              <div><dt>Birdsong</dt><dd>Place <b>1 wood at each sawmill</b>.</dd></div>
+              <div><dt>Daylight</dt><dd>Craft with workshops. Then <b>3 actions</b>, +1 per bird card spent:
+                <ul>
+                  <li><b>Battle.</b></li>
+                  <li><b>March:</b> two moves.</li>
+                  <li><b>Recruit:</b> 1 warrior at every recruiter (once per turn).</li>
+                  <li><b>Build:</b> in a clearing you rule; pay wood from connected clearings you rule; score the uncovered space.</li>
+                  <li><b>Overwork:</b> spend a card matching a sawmill's clearing for 1 wood there.</li>
+                </ul></dd></div>
+              <div><dt>Evening</dt><dd>Draw 1 + uncovered draw bonuses, discard to 5.</dd></div>
+            </dl>
+            <div class="tbl-wrap" style="margin-top:12px">
+              <table class="nums">
+                <thead><tr><th>Building #</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+                <tbody>
+                  <tr><th>Wood cost</th><td>1</td><td>2</td><td>3</td><td>3</td><td>4</td></tr>
+                  <tr><th>Sawmill VP</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                  <tr><th>Workshop VP</th><td>2</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                  <tr><th>Recruiter VP</th><td>1</td><td>2</td><td>3</td><td>3</td><td>4</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="board-note">Board · building #1 of each type is placed in setup · some recruiter spaces hide card draw bonuses</p>
+          </div>
+          <div class="pb-ex">
+            <div class="ex"><h4>The Keep</h4><p>Only the Marquise may <b>place</b> pieces in the keep's clearing; others can still move in and fight. Lose the keep and it never returns.</p></div>
+            <div class="ex"><h4>Field Hospitals</h4><p>When cat warriors are removed from a clearing, spend <b>one card matching that clearing</b> to put them all back at the keep. Works only while the keep stands.</p></div>
+            <div class="ex"><h4>Building example</h4><p>She rules a rabbit clearing with an empty slot. Her next sawmill costs 3 wood, so she takes wood from a nearby mouse clearing she rules, linked through ruled clearings. She places the sawmill and scores the 3 points it uncovers. (<i>Learning to Play</i>, p. 11.)</p></div>
+            <div class="tip"><b>Tip:</b> sawmills feed everything, workshops craft, recruiters bring warriors and cards. Keep your territory connected, or the wood can't reach the build site.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- EYRIE -->
+      <article class="pb eyrie" id="pb-eyrie">
+        <div class="pb-head"><span class="dot eyrie">B</span><h3>Eyrie Dynasties</h3><p>A programmed war machine. Every card in the Decree is a promise you must keep, every turn, forever.</p></div>
+        <div class="pb-body">
+          <div class="pb-round">
+            <span class="pb-label">Their turn</span>
+            <dl class="phases">
+              <div><dt>Birdsong</dt><dd>
+                <ul>
+                  <li><b>Emergency Orders:</b> empty hand? Draw 1.</li>
+                  <li><b>Add to the Decree:</b> you must add 1 or 2 cards to any columns; at most one bird.</li>
+                  <li><b>A New Roost:</b> no roosts on the map? Place a roost + 3 warriors in the clearing with the fewest warriors.</li>
+                </ul></dd></div>
+              <div><dt>Daylight</dt><dd>Craft with roosts. Then <b>resolve the Decree</b>, left to right. Every card is one action in a clearing of its suit (birds: any):
+                <ul>
+                  <li><b>Recruit:</b> 1 warrior at a matching roost.</li>
+                  <li><b>Move:</b> from a matching clearing.</li>
+                  <li><b>Battle:</b> in a matching clearing.</li>
+                  <li><b>Build:</b> a roost in a matching clearing you rule with no roost.</li>
+                </ul>Any order you can't fully carry out → <b>turmoil</b>.</dd></div>
+              <div><dt>Evening</dt><dd>Score the rightmost empty roost space. Draw 1 + bonuses, discard to 5.</dd></div>
+            </dl>
+            <div class="tbl-wrap" style="margin-top:12px">
+              <table class="nums">
+                <thead><tr><th>Roosts on map</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr></thead>
+                <tbody><tr><th>Evening VP</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>4</td><td>5</td></tr></tbody>
+              </table>
+            </div>
+            <p class="board-note">Board · 2 roosts = 1 and 3 roosts = 2 are confirmed by Walking Through Root</p>
+          </div>
+          <div class="pb-ex">
+            <div class="ex"><h4>Turmoil</h4><ul>
+              <li><b>Humiliate:</b> −1 point per bird card in the Decree, Viziers included.</li>
+              <li><b>Purge:</b> discard the Decree except the 2 Loyal Viziers.</li>
+              <li><b>Depose:</b> swap to a face-up leader; tuck the Viziers where it says.</li>
+              <li><b>Rest:</b> skip to Evening (you still score and draw).</li></ul></div>
+            <div class="ex"><h4>Leaders</h4>
+              <div class="mini-cards">
+                <img src="img/cards/bird-builder.jpg" alt="Builder: Viziers on Recruit and Move. Ignore your Disdain for Trade when you craft." loading="lazy" width="240" height="327">
+                <img src="img/cards/bird-charismatic.jpg" alt="Charismatic: Viziers on Recruit and Battle. You place two warriors, not one, each time you recruit." loading="lazy" width="240" height="327">
+                <img src="img/cards/bird-commander.jpg" alt="Commander: Viziers on Move and Battle. As attacker in battle, you deal an extra hit." loading="lazy" width="240" height="327">
+                <img src="img/cards/bird-despot.jpg" alt="Despot: Viziers on Move and Build. Score a point if you remove at least one building or token in battle." loading="lazy" width="240" height="327">
+              </div>
+              <p style="margin-top:8px">Builder: full item points · Charismatic: recruit 2 · Commander: +1 hit attacking · Despot: +1 point for buildings/tokens removed in battle.</p></div>
+            <div class="tip"><b>Tip:</b> add orders you can keep even after a bad turn. Opponents break the Eyrie by clearing out the suit their Decree needs.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ALLIANCE -->
+      <article class="pb alli" id="pb-alliance">
+        <div class="pb-head"><span class="dot alli">C</span><h3>Woodland Alliance</h3><p>Slow start, explosive finish. Sympathy scores; supporters pay for everything; revolts turn the board over.</p></div>
+        <div class="pb-body">
+          <div class="pb-round">
+            <span class="pb-label">Their turn</span>
+            <dl class="phases">
+              <div><dt>Birdsong</dt><dd>
+                <ul>
+                  <li><b>Revolt</b> (any number): a sympathetic clearing without a base, matching a base on your board. Spend <b>2 matching supporters</b>. Remove all enemy pieces there; place the base, warriors equal to sympathetic clearings of that suit, and 1 officer.</li>
+                  <li><b>Spread Sympathy</b> (any number): an unsympathetic clearing next to sympathy (any clearing for the first). Pay supporters of its suit as printed; <b>+1</b> if someone has 3+ warriors there (Martial Law). Score it.</li>
+                </ul></dd></div>
+              <div><dt>Daylight</dt><dd>Any order: <b>Craft</b> with sympathy · <b>Mobilize</b> a card to supporters · <b>Train</b> an officer by spending a card matching a base.</dd></div>
+              <div><dt>Evening</dt><dd>One <b>military operation per officer</b>: Move, Battle, Recruit at a base, or <b>Organize</b> (swap one of your warriors for sympathy and score it). Then draw 1 + bonuses, discard to 5.</dd></div>
+            </dl>
+            <div class="tbl-wrap" style="margin-top:12px">
+              <table class="nums">
+                <thead><tr><th>Sympathy #</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th></tr></thead>
+                <tbody>
+                  <tr><th>Cost</th><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
+                  <tr><th>VP</th><td>0</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td><td>3</td><td>4</td><td>4</td><td>4</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="board-note">Board · 2nd sympathy = 1 point and 4th costs 2 are confirmed by the booklets · bases cover draw bonuses</p>
+          </div>
+          <div class="pb-ex">
+            <div class="ex"><h4>Supporters</h4><p>Face-down cards, spent only for their suit, outside your hand limit. <b>At most 5</b> while you have no base on the map.</p></div>
+            <div class="ex"><h4>Outrage</h4><p>Anyone who <b>removes a sympathy token</b> or <b>moves warriors into a sympathetic clearing</b> must give you a card of that clearing's suit as a supporter. With none to give, they show their hand and you draw a supporter from the deck.</p></div>
+            <div class="ex"><h4>Losing a base</h4><p>Discard <b>every supporter of that suit</b> (birds too) and half your officers, rounded up.</p></div>
+            <div class="tip"><b>Tip:</b> sympathy where enemies will want to march collects Outrage cards. Save two matching supporters for a revolt in a crowded clearing: it can remove several buildings at once.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- VAGABOND -->
+      <article class="pb vaga" id="pb-vagabond">
+        <div class="pb-head"><span class="dot vaga">D</span><h3>Vagabond</h3><p>A one-raccoon faction. Items are his actions; friends and enemies are his points.</p></div>
+        <div class="pb-body">
+          <div class="pb-round">
+            <span class="pb-label">His turn</span>
+            <dl class="phases">
+              <div><dt>Birdsong</dt><dd><b>Refresh</b> 3 exhausted items + 2 per face-up tea. <b>Slip:</b> free move to an adjacent clearing or forest.</dd></div>
+              <div><dt>Daylight</dt><dd>Exhaust items, any order:
+                <ul>
+                  <li><b>Move</b> (boot, +1 boot into Hostile warriors) · <b>Battle</b> (sword) · <b>Strike</b> (crossbow: remove 1 enemy warrior, or another piece if they have no warriors there).</li>
+                  <li><b>Explore</b> (torch): take a ruin's item, +1 point.</li>
+                  <li><b>Aid</b> (any item + a card matching his clearing): may take one of their crafted items.</li>
+                  <li><b>Quest</b> (the 2 items shown): +1 point per finished quest of that suit, or draw 2.</li>
+                  <li><b>Repair</b> (hammer) · <b>Craft</b> (hammers) · <b>Special action</b>.</li>
+                </ul></dd></div>
+              <div><dt>Evening</dt><dd>In a forest? Repair everything. Draw 1 + 1 per face-up coins; discard to 5. Satchel and damaged items over <b>6 + 2 per bag</b> are lost (items on the tracks don't count).</dd></div>
+            </dl>
+            <div class="tbl-wrap" style="margin-top:12px">
+              <table>
+                <thead><tr><th>Relationship</th><th>How</th></tr></thead>
+                <tbody>
+                  <tr><th>Improve</th><td>Aid the faction the printed number of times <b>in one turn</b>; move right, score the new space (steps cost 1, 2, then 3 Aids and score +1, +2, +2).</td></tr>
+                  <tr><th>Allied</th><td>Each Aid +2 points. Take their warriors along when moving; fight with them as your own.</td></tr>
+                  <tr><th>Hostile</th><td>Remove one of their warriors and they turn Hostile. Then +1 point per Hostile piece removed in battle on your turn (Infamy).</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="pb-ex">
+            <div class="ex"><h4>Characters</h4>
+              <div class="mini-cards three">
+                <img src="img/cards/vagabond-thief.jpg" alt="Thief. Steal: take a random card from a player in your clearing. Starting items: boot, torch, tea, sword." loading="lazy" width="240" height="327">
+                <img src="img/cards/vagabond-tinker.jpg" alt="Tinker. Day Labor: take a card from the discard pile matching your clearing. Starting items: boot, torch, bag, hammer." loading="lazy" width="240" height="327">
+                <img src="img/cards/vagabond-ranger.jpg" alt="Ranger. Hideout: repair three items, then immediately end Daylight. Starting items: boot, torch, crossbow, sword." loading="lazy" width="240" height="327">
+              </div>
+              <p style="margin-top:8px"><b>Thief</b> steals a random card · <b>Tinker</b> takes a matching card from the discard pile · <b>Ranger</b> hides out to repair 3 items.</p></div>
+            <div class="ex"><h4>In battle</h4><p>His rolled hits are capped by his <b>undamaged swords</b>. Each hit he takes <b>damages an item</b>. With no undamaged sword he is defenseless. A revolt or Favor card in his clearing damages 3 items.</p></div>
+            <div class="tip"><b>Tip:</b> crafting an item he wants is an easy way to win his favour. If he gets too strong, hit him when he is light on swords: a sound beating sends him to the forest for a turn.</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="break mouse"><span>54 cards, four suits</span></div>
+
+    <!-- DECK -->
+    <section id="deck">
+      <div class="section-title">
+        <h2>The deck</h2>
+        <p>Every card in the shared deck. The black badge is the number of copies. Full table with costs: <code>cards/deck.md</code>.</p>
+      </div>
+      <div class="deck-tabs" role="group" aria-label="Filter cards by suit">
+        <button type="button" data-suit="all" aria-pressed="true">All 54</button>
+        <button type="button" data-suit="fox" aria-pressed="false">Fox 14</button>
+        <button type="button" data-suit="rabbit" aria-pressed="false">Rabbit 13</button>
+        <button type="button" data-suit="mouse" aria-pressed="false">Mouse 13</button>
+        <button type="button" data-suit="bird" aria-pressed="false">Bird 14</button>
+      </div>
+      <div class="gallery" id="gallery"></div>
+      <p class="story-note">Copy counts aren't printed in the official card library. These counts add up to the known suit totals (14 / 14 / 13 / 13); the second copies of Codebreakers and Scouting Party are the least certain. Card art © Leder Games.</p>
+    </section>
+
+    <!-- DOMINANCE -->
+    <section class="end" id="dominance">
+      <div class="end-inner">
+        <div class="end-copy">
+          <span class="end-kicker">Another way to win</span>
+          <h2 class="end-title">Dominance</h2>
+          <span class="end-sub">Trade your score for the map</span>
+          <ul class="end-list">
+            <li>With <b>10+ points</b>, play a dominance card in Daylight. Your score marker leaves the track: <b>no more points, ever</b>.</li>
+            <li>Fox, rabbit or mouse: win if you <b>rule 3 clearings of that suit</b> at the start of your Birdsong.</li>
+            <li>Bird: win if you <b>rule two opposite corners</b> at the start of your Birdsong.</li>
+            <li>Spent for its suit, a dominance card goes <b>beside the map</b>. Anyone can take it in Daylight by spending a card of its suit (a bird card for the bird dominance).</li>
+            <li>The <b>Vagabond</b> can't use it to win alone. In 4-player games he forms a <b>coalition</b> with the lowest scorer and wins if they win.</li>
+            <li>Not used in <b>2-player</b> games.</li>
+          </ul>
+        </div>
+        <div class="end-art" aria-label="The four dominance cards">
+          <img src="img/cards/card-dominancefox.jpg" alt="Fox Dominance: you win the game if you rule three fox clearings at the start of your Birdsong" loading="lazy" width="240" height="335">
+          <img src="img/cards/card-dominancebunny.jpg" alt="Rabbit Dominance: you win the game if you rule three rabbit clearings at the start of your Birdsong" loading="lazy" width="240" height="335">
+          <img src="img/cards/card-dominancemouse.jpg" alt="Mouse Dominance: you win the game if you rule three mouse clearings at the start of your Birdsong" loading="lazy" width="240" height="335">
+          <img src="img/cards/card-dominancebird.jpg" alt="Bird Dominance: you win the game if you rule two opposite corners at the start of your Birdsong" loading="lazy" width="240" height="335">
+        </div>
+      </div>
+    </section>
+
+    <!-- SIM:START (generated by sim/showcase.py — do not edit by hand) -->
+    <div class="break"><span>Simulated games</span></div>
+    <section id="simulation">
+      <div class="section-title">
+        <h2>The game, played by bots</h2>
+        <p>A rules simulator plays complete games from setup to the last point. Everything here comes from real runs of it (300 games per player count).</p>
+      </div>
+      <div class="story" data-label="HOW IT WORKS" style="margin-top:30px">
+        <div class="turn-grid">
+          <div class="step"><span class="step-n" aria-hidden="true">1</span><h3>Real rules</h3><p>The engine follows the <b>Law of Root</b> (Oct 2025) for all four base factions: setup, rule, movement, battle with ambushes, crafting, dominance (coalitions are in the engine and tested, but the bots never form one), Decree and turmoil, revolts and Outrage, Vagabond items, quests and relationships. 12 rule scenarios, data and setup checks, and invariant checks over 300 full games.</p></div>
+          <div class="step"><span class="step-n" aria-hidden="true">2</span><h3>Real cards</h3><p>All <b>54 deck cards</b> with their printed costs and effects, the 4 Eyrie leaders, 3 Vagabond characters and 15 quests. Codebreakers and Cobbler are crafted but unused by the bots, and the Vagabond never moves or fights with Allied warriors.</p></div>
+          <div class="step"><span class="step-n" aria-hidden="true">3</span><h3>Estimates</h3><p>The Autumn map's paths were read off the map picture. Faction-board numbers the booklets don't show, the dice faces and the deck's copy counts are marked <b>EST</b> in <code style="display:inline;padding:1px 5px">sim/data.py</code>.</p></div>
+          <div class="step"><span class="step-n" aria-hidden="true">4</span><h3>Bots</h3><p>One per faction, following community strategy guides: everyone pressures the cats, the Eyrie dry-run their Decree a turn ahead, the Alliance revolts early, the Vagabond quests for cards and turns on a runaway leader, dominance is a comeback play. They still play the Eyrie and Vagabond weaker than good players, so win rates show <b>bot</b> behaviour, not the real game's balance.</p></div>
+        </div>
+      </div>
+<article class="pb sim" id="sim-featured">
+<div class="pb-head"><span class="dot all">★</span><h3>Featured game · 4 players · seed 3</h3><p>Alliance wins in round 9 (30 VP). Every line below comes from the simulator's log; <a href="sim/logs/featured-4p-seed3.txt" style="color:#fff">open the full turn-by-turn log</a>.</p></div>
+<div class="pb-body"><div class="pb-round"><span class="pb-label">VP after each round</span>
+<div class="tbl-wrap"><table class="nums"><thead><tr><th scope="col">Round</th><th scope="col">Marquise</th><th scope="col">Eyrie</th><th scope="col">Alliance</th><th scope="col">Vagabond</th></tr></thead><tbody>
+<tr><th scope="row">R1</th><td>2</td><td>1</td><td>4</td><td>2</td></tr>
+<tr><th scope="row">R2</th><td>5</td><td>2</td><td>7</td><td>6</td></tr>
+<tr><th scope="row">R3</th><td>10</td><td>3</td><td>8</td><td>6</td></tr>
+<tr><th scope="row">R4</th><td>14</td><td>4</td><td>9</td><td>8</td></tr>
+<tr><th scope="row">R5</th><td>17</td><td>8</td><td>10</td><td>14</td></tr>
+<tr><th scope="row">R6</th><td>21</td><td>14</td><td>14</td><td>15</td></tr>
+<tr><th scope="row">R7</th><td>22</td><td>14</td><td>22</td><td>19</td></tr>
+<tr><th scope="row">R8</th><td>23</td><td>18</td><td>28</td><td>19</td></tr>
+<tr><th scope="row">Final</th><td><b>24</b></td><td><b>18</b></td><td><b>30</b></td><td><b>25</b></td></tr>
+</tbody></table></div>
+<span class="pb-label" style="margin-top:16px">Where the points came from</span>
+<div class="tbl-wrap"><table class="nums"><thead><tr><th scope="col">Source</th><th scope="col">Marquise</th><th scope="col">Eyrie</th><th scope="col">Alliance</th><th scope="col">Vagabond</th></tr></thead><tbody>
+<tr><th scope="row">Sympathy</th><td></td><td></td><td>19</td><td></td></tr>
+<tr><th scope="row">Removing pieces</th><td>6</td><td>6</td><td>1</td><td>5</td></tr>
+<tr><th scope="row">Roosts</th><td></td><td>16</td><td></td><td></td></tr>
+<tr><th scope="row">Buildings</th><td>15</td><td></td><td></td><td></td></tr>
+<tr><th scope="row">Crafted items</th><td>3</td><td>1</td><td>10</td><td></td></tr>
+<tr><th scope="row">Relationships</th><td></td><td></td><td></td><td>9</td></tr>
+<tr><th scope="row">Turmoil</th><td></td><td>-5</td><td></td><td></td></tr>
+<tr><th scope="row">Infamy</th><td></td><td></td><td></td><td>4</td></tr>
+<tr><th scope="row">Quests</th><td></td><td></td><td></td><td>4</td></tr>
+<tr><th scope="row">Ruins</th><td></td><td></td><td></td><td>3</td></tr>
+</tbody></table></div></div>
+<div class="pb-ex"><span class="pb-label">Round by round</span>
+<div class="ex"><h4>Round 1</h4><ul class="sim-list"><li>Vagabond: explores the ruin in mouse-11: finds a boot</li><li>Vagabond: relationship with Marquise improves to 1</li><li>Marquise: builds a workshop in mouse-2</li><li>Alliance: spreads sympathy: sympathy in mouse-2</li><li>Alliance: spreads sympathy: sympathy in rabbit-5</li><li>Alliance: crafts Root Tea (tea)</li><li>Alliance: ambush! 2 immediate hits</li></ul></div>
+<div class="ex"><h4>Round 2</h4><ul class="sim-list"><li>Vagabond: explores the ruin in fox-6: finds a sword</li><li>Vagabond: relationship with Marquise improves to 2</li><li>Alliance: Outrage in fox-6: Vagabond has no fox card, shows hand; Alliance draws a supporter</li><li>Marquise: crafts Mouse-in-a-Sack (bag)</li><li>Marquise: builds a sawmill in mouse-7</li><li>Alliance: Outrage in mouse-2: Marquise gives Codebreakers (mouse) as a supporter</li><li>Alliance: crafts Tax Collector (persistent)</li></ul></div>
+<div class="ex"><h4>Round 3</h4><ul class="sim-list"><li>Marquise: crafts Root Tea (tea)</li><li>Marquise: builds a sawmill in rabbit-4</li><li>Alliance: Outrage in mouse-2: Marquise gives Scouting Party (mouse) as a supporter</li><li>Alliance: REVOLT in fox-6</li><li>Alliance: base placed with 1 warriors; officers 1</li><li>Alliance: spreads sympathy: sympathy in mouse-11</li><li>Marquise: ambush! 2 immediate hits</li></ul></div>
+<div class="ex"><h4>Round 4</h4><ul class="sim-list"><li>Vagabond: completes quest Fend off a Bear (rabbit)</li><li>Vagabond: completes quest Expel Bandits (mouse)</li><li>Marquise: builds a sawmill in fox-8</li><li>Alliance: Outrage in rabbit-10: Marquise gives Command Warren (rabbit) as a supporter</li><li>Alliance: spreads sympathy: sympathy in mouse-2</li><li>Alliance: Outrage in mouse-2: Eyrie gives Dominance (mouse) as a supporter</li><li>Eyrie: Decree build: roost in rabbit-5</li></ul></div>
+<div class="ex"><h4>Round 5</h4><ul class="sim-list"><li>Vagabond: Marquise is now Hostile</li><li>Marquise: the keep is destroyed: no more Field Hospitals</li><li>Marquise: builds a sawmill in fox-8</li><li>Marquise: builds a workshop in mouse-9</li><li>Alliance: REVOLT in mouse-11</li><li>Alliance: base placed with 2 warriors; officers 2</li><li>Eyrie: Decree build: roost in mouse-9</li></ul></div>
+<div class="ex"><h4>Round 6</h4><ul class="sim-list"><li>Vagabond: relationship with Alliance improves to 1</li><li>Marquise: builds a sawmill in fox-12</li><li>Alliance: spreads sympathy: sympathy in rabbit-3</li><li>Alliance: crafts Travel Gear (boot)</li><li>Alliance: ambush! 2 immediate hits</li><li>Eyrie: Decree build: roost in mouse-2</li><li>Eyrie: Decree build: roost in rabbit-4</li></ul></div>
+<div class="ex"><h4>Round 7</h4><ul class="sim-list"><li>Vagabond: completes quest Guard Duty (rabbit)</li><li>Vagabond: relationship with Alliance improves to 2</li><li>Alliance: crafts Armorers (persistent)</li><li>Alliance: Outrage in fox-12: Eyrie gives Favor of the Foxes (fox) as a supporter</li><li>Marquise: ambush! 2 immediate hits</li><li>Eyrie: TURMOIL: humiliated for 5 bird cards</li><li>Eyrie: Charismatic deposed; new leader Builder</li></ul></div>
+<div class="ex"><h4>Round 8</h4><ul class="sim-list"><li>Alliance: Outrage in fox-12: Marquise gives Protection Racket (fox) as a supporter</li><li>Eyrie: ambush! 2 immediate hits</li><li>Alliance: REVOLT in rabbit-5</li><li>Alliance: base placed with 0 warriors; officers 3</li><li>Alliance: spreads sympathy: sympathy in fox-12</li><li>Alliance: crafts Birdy Bindle (bag)</li><li>Alliance: crafts Anvil (hammer)</li></ul></div>
+<div class="ex"><h4>Round 9</h4><ul class="sim-list"><li>Vagabond: explores the ruin in fox-12: finds a hammer</li><li>Vagabond: relationship with Eyrie improves to 1</li><li>Vagabond: relationship with Eyrie improves to 2</li><li>Alliance: Outrage in fox-12: Vagabond gives Ambush! (bird) as a supporter</li><li>Marquise: builds a workshop in rabbit-10</li><li>Alliance: spreads sympathy: sympathy in mouse-7</li><li>GAME OVER: Alliance win (30 VP); Marquise 24, Eyrie 18, Alliance 30, Vagabond 25</li></ul></div>
+</div></div></article>
+      <div class="story" data-label="EVERY KIND OF ENDING" style="margin-top:30px">
+        <h2 class="sr-only">Example endings</h2>
+        <p class="story-note" style="margin:0 0 12px">One game for every winner and way of winning the bots produced in 300 seeds per player count (torch-marked mixes from <i>Learning to Play</i> p. 22: Marquise + Eyrie, + Vagabond, + Alliance). Each seed replays exactly; click it for the full log.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th scope="col">Players</th><th scope="col">Winner</th><th scope="col">How</th><th scope="col">When</th><th scope="col">Final VP</th><th scope="col">Log</th></tr></thead>
+          <tbody><tr><th scope="row">2p</th><td>Eyrie</td><td>30 VP</td><td>round 9</td><td>Marquise 20 · Eyrie 31</td><td><a href="sim/logs/2p-seed6.txt">seed 6</a></td></tr><tr><th scope="row">2p</th><td>Marquise</td><td>30 VP</td><td>round 8</td><td>Marquise 30 · Eyrie 13</td><td><a href="sim/logs/2p-seed1.txt">seed 1</a></td></tr><tr><th scope="row">3p</th><td>Eyrie</td><td>30 VP</td><td>round 15</td><td>Marquise 10 · Eyrie 32 · Vagabond 29</td><td><a href="sim/logs/3p-seed3.txt">seed 3</a></td></tr><tr><th scope="row">3p</th><td>Marquise</td><td>30 VP</td><td>round 7</td><td>Marquise 32 · Eyrie 9 · Vagabond 13</td><td><a href="sim/logs/3p-seed2.txt">seed 2</a></td></tr><tr><th scope="row">3p</th><td>Vagabond</td><td>30 VP</td><td>round 10</td><td>Marquise 22 · Eyrie 21 · Vagabond 31</td><td><a href="sim/logs/3p-seed55.txt">seed 55</a></td></tr><tr><th scope="row">3p</th><td>Eyrie</td><td>dominance</td><td>round 7</td><td>Marquise 15 · Eyrie 11 · Vagabond 13</td><td><a href="sim/logs/3p-seed43.txt">seed 43</a></td></tr><tr><th scope="row">3p</th><td>Marquise</td><td>dominance</td><td>round 9</td><td>Marquise 13 · Eyrie 6 · Vagabond 24</td><td><a href="sim/logs/3p-seed1.txt">seed 1</a></td></tr><tr><th scope="row">4p</th><td>Alliance</td><td>30 VP</td><td>round 9</td><td>Marquise 24 · Eyrie 18 · Alliance 30 · Vagabond 25</td><td><a href="sim/logs/4p-seed3.txt">seed 3</a></td></tr><tr><th scope="row">4p</th><td>Eyrie</td><td>30 VP</td><td>round 10</td><td>Marquise 27 · Eyrie 33 · Alliance 24 · Vagabond 21</td><td><a href="sim/logs/4p-seed6.txt">seed 6</a></td></tr><tr><th scope="row">4p</th><td>Marquise</td><td>30 VP</td><td>round 8</td><td>Marquise 31 · Eyrie 9 · Alliance 25 · Vagabond 22</td><td><a href="sim/logs/4p-seed1.txt">seed 1</a></td></tr><tr><th scope="row">4p</th><td>Vagabond</td><td>30 VP</td><td>round 9</td><td>Marquise 14 · Eyrie 4 · Alliance 15 · Vagabond 30</td><td><a href="sim/logs/4p-seed22.txt">seed 22</a></td></tr><tr><th scope="row">4p</th><td>Eyrie</td><td>dominance</td><td>round 7</td><td>Marquise 20 · Eyrie 16 · Alliance 11 · Vagabond 12</td><td><a href="sim/logs/4p-seed86.txt">seed 86</a></td></tr><tr><th scope="row">4p</th><td>Marquise</td><td>dominance</td><td>round 6</td><td>Marquise 11 · Eyrie 0 · Alliance 10 · Vagabond 11</td><td><a href="sim/logs/4p-seed27.txt">seed 27</a></td></tr></tbody>
+        </table></div>
+      </div>
+      <div class="story" data-label="300 GAMES PER PLAYER COUNT" style="margin-top:30px">
+        <h2 class="sr-only">Statistics</h2>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th scope="col">Game</th><th scope="col" colspan="4">Win rate · average VP</th><th scope="col">How games end</th><th scope="col">Rounds</th></tr></thead>
+          <tbody><tr><th scope="row">2 players</th><td><span class="dot cat">M</span> Marquise <b>62%</b> · 28 VP</td><td><span class="dot eyrie">E</span> Eyrie <b>38%</b> · 22 VP</td><td></td><td></td><td>30 VP 100%</td><td>9.8</td></tr><tr><th scope="row">3 players</th><td><span class="dot cat">M</span> Marquise <b>69%</b> · 26 VP</td><td><span class="dot eyrie">E</span> Eyrie <b>26%</b> · 17 VP</td><td><span class="dot vaga">V</span> Vagabond <b>5%</b> · 16 VP</td><td></td><td>30 VP 84%, dominance 16%</td><td>9.0</td></tr><tr><th scope="row">4 players</th><td><span class="dot cat">M</span> Marquise <b>47%</b> · 25 VP</td><td><span class="dot eyrie">E</span> Eyrie <b>21%</b> · 17 VP</td><td><span class="dot alli">A</span> Alliance <b>29%</b> · 23 VP</td><td><span class="dot vaga">V</span> Vagabond <b>3%</b> · 18 VP</td><td>30 VP 92%, dominance 8%</td><td>8.7</td></tr></tbody>
+        </table></div>
+        <div class="tbl-wrap" style="margin-top:12px"><table class="nums">
+          <thead><tr><th scope="col">Per game</th><th scope="col">Battles</th><th scope="col">Ambushes</th><th scope="col">Crafts</th><th scope="col">Turmoils</th><th scope="col">Revolts / Outrage</th><th scope="col">Quests / Aids</th><th scope="col">Field Hospitals</th></tr></thead>
+          <tbody><tr><th scope="row">2p</th><td>8.4</td><td>1.6</td><td>6.9</td><td>2.3</td><td>0.0 / 0.0</td><td>0.0 / 0.0</td><td>1.1</td></tr><tr><th scope="row">3p</th><td>8.7</td><td>1.7</td><td>7.1</td><td>2.1</td><td>0.0 / 0.0</td><td>2.2 / 7.9</td><td>0.9</td></tr><tr><th scope="row">4p</th><td>14.3</td><td>2.6</td><td>11.4</td><td>1.9</td><td>2.4 / 11.3</td><td>2.2 / 10.2</td><td>0.8</td></tr></tbody>
+        </table></div>
+        <p class="story-note">Run it yourself: <code style="display:inline;padding:1px 5px">python sim/run.py --players 4 --seed 3</code> prints one game turn by turn; <code style="display:inline;padding:1px 5px">python sim/run.py --batch 300</code> repeats these statistics; <code style="display:inline;padding:1px 5px">python sim/test_rules.py</code> runs the rule checks.</p>
+      </div>
+    </section>
+    <!-- SIM:END -->
+
+    <!-- FAQ -->
+    <div class="break"><span>Mistakes everyone makes</span></div>
+    <section class="faq" id="faq">
+      <h2 class="sr-only">Rules questions</h2>
+      <div class="faq-grid">
+        <details class="faq-item" open>
+          <summary><span class="faq-q">Q.01</span><span class="faq-text">Can I move from a tied clearing to another tied one?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>No. You must rule the clearing you leave or the one you enter. A tie means nobody rules (the Eyrie excepted).</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-q">Q.02</span><span class="faq-text">Can I hit a building while warriors stand there?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>No. All of that side's warriors in the clearing go first; only then buildings and tokens. Each building or token removed scores you 1.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-q">Q.03</span><span class="faq-text">The sword card is in my hand, but no swords are left?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Then you can't craft it. Item cards need the item in the map supply. You can still spend the card for its suit.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-q">Q.04</span><span class="faq-text">Does battling in a sympathetic clearing cause Outrage?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>Only if you remove the sympathy token, or if you moved warriors in. Outrage is about removing sympathy and moving in.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-q">Q.05</span><span class="faq-text">Can the Eyrie add two birds to the Decree?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>No. One or two cards per Birdsong, and at most one of them a bird. In turmoil every bird costs a point, the Viziers too.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-q">Q.06</span><span class="faq-text">Does Field Hospitals cost a card per warrior?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>No. One card matching the clearing saves all the cat warriors removed there at once, as long as the keep is on the map.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-q">Q.07</span><span class="faq-text">Do I win when I take the third clearing?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>No. Dominance is checked at the start of your next Birdsong. Everyone else gets one turn to break it.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary><span class="faq-q">Q.08</span><span class="faq-text">Can two Aids on different turns improve a relationship?</span><span class="faq-icon" aria-hidden="true"></span></summary>
+          <div class="faq-a"><p>No. The Aids for one step must happen in the same turn. Each Aid also needs a card matching the Vagabond's clearing.</p></div>
+        </details>
+      </div>
+    </section>
+
+  </div>
+  </main>
+
+  <footer class="foot">
+    <span>Unofficial digest · Law of Root, Oct 13 2025 · base game</span>
+    <nav>
+      <a href="#factions">Factions</a>
+      <a href="#battle">Battle</a>
+      <a href="#deck">Deck</a>
+      <a href="https://ledergames.com/pages/resources" rel="noopener">Official rules</a>
+      <a href="https://cards.ledergames.com/" rel="noopener">Card library</a>
+    </nav>
+    <span>Game, rulebook &amp; card images © Leder Games · personal reference</span>
+  </footer>
+
+</div>
+
+<script>
+/* Card gallery: [file stem, name, suit, copies, short text] (source: cards/deck.md) */
+(function(){
+  const C=[
+    ['ambushfox','Ambush!','fox',1,'2 hits as defender (fox clearings)'],
+    ['dominancefox','Dominance','fox',1,'Rule 3 fox clearings'],
+    ['anvil','Anvil','fox',1,'Cost fox · hammer +2'],
+    ['favorofthefoxes','Favor of the Foxes','fox',1,'Cost 3 fox · wipe fox clearings'],
+    ['foxfolksteel','Foxfolk Steel','fox',1,'Cost 2 fox · sword +2'],
+    ['gentlyusedknapsack','Gently Used Knapsack','fox',1,'Cost mouse · bag +1'],
+    ['protectionracket','Protection Racket','fox',1,'Cost 2 rabbit · coins +3'],
+    ['rootteafox','Root Tea','fox',1,'Cost mouse · tea +2'],
+    ['standanddeliver','Stand and Deliver!','fox',2,'Cost 3 mouse · steal in Birdsong'],
+    ['taxcollector','Tax Collector','fox',3,'Cost rabbit+fox+mouse · warrior → card'],
+    ['travelgearfox','Travel Gear','fox',1,'Cost rabbit · boots +1'],
+    ['ambushbunny','Ambush!','rabbit',1,'2 hits as defender (rabbit clearings)'],
+    ['dominancebunny','Dominance','rabbit',1,'Rule 3 rabbit clearings'],
+    ['avisittofriends','A Visit to Friends','rabbit',1,'Cost rabbit · boots +1'],
+    ['bakesale','Bake Sale','rabbit',1,'Cost 2 rabbit · coins +3'],
+    ['betterburrowbank','Better Burrow Bank','rabbit',2,'Cost 2 rabbit · you and an enemy draw'],
+    ['cobbler','Cobbler','rabbit',2,'Cost 2 rabbit · move in Evening'],
+    ['commandwarren','Command Warren','rabbit',2,'Cost 2 rabbit · battle at start of Daylight'],
+    ['favoroftherabbits','Favor of the Rabbits','rabbit',1,'Cost 3 rabbit · wipe rabbit clearings'],
+    ['rootteabunny','Root Tea','rabbit',1,'Cost mouse · tea +2'],
+    ['smugglerstrail','Smuggler’s Trail','rabbit',1,'Cost mouse · bag +1'],
+    ['ambushmouse','Ambush!','mouse',1,'2 hits as defender (mouse clearings)'],
+    ['dominancemouse','Dominance','mouse',1,'Rule 3 mouse clearings'],
+    ['codebreakers','Codebreakers','mouse',2,'Cost mouse · look at a hand'],
+    ['crossbowmouse','Crossbow','mouse',1,'Cost fox · crossbow +1'],
+    ['favorofthemice','Favor of the Mice','mouse',1,'Cost 3 mouse · wipe mouse clearings'],
+    ['investments','Investments','mouse',1,'Cost 2 rabbit · coins +3'],
+    ['mouseinasack','Mouse-in-a-Sack','mouse',1,'Cost mouse · bag +1'],
+    ['rootteamouse','Root Tea','mouse',1,'Cost mouse · tea +2'],
+    ['scoutingparty','Scouting Party','mouse',2,'Cost 2 mouse · immune to ambush'],
+    ['sword','Sword','mouse',1,'Cost 2 fox · sword +2'],
+    ['travelgearmouse','Travel Gear','mouse',1,'Cost rabbit · boots +1'],
+    ['ambushbird','Ambush!','bird',2,'2 hits as defender (any clearing)'],
+    ['dominancebird','Dominance','bird',1,'Rule two opposite corners'],
+    ['armorers','Armorers','bird',2,'Cost fox · ignore rolled hits'],
+    ['armstrader','Arms Trader','bird',1,'Cost 2 fox · sword +2'],
+    ['birdybindle','Birdy Bindle','bird',1,'Cost mouse · bag +1'],
+    ['brutaltactics','Brutal Tactics','bird',2,'Cost 2 fox · +1 hit, defender +1 point'],
+    ['crossbowbird','Crossbow','bird',1,'Cost fox · crossbow +1'],
+    ['royalclaim','Royal Claim','bird',1,'Cost 4 any · 1 point per ruled clearing'],
+    ['sappers','Sappers','bird',2,'Cost mouse · +1 hit as defender'],
+    ['woodlandrunners','Woodland Runners','bird',1,'Cost rabbit · boots +1']
+  ];
+  const total=C.reduce((s,c)=>s+c[3],0);
+  console.assert(total===54,'deck should hold 54 cards, got '+total);
+  const g=document.getElementById('gallery');
+  g.innerHTML=C.map(([f,n,s,k,t])=>
+    `<figure class="gcard" data-suit="${s}">${k>1?`<span class="copies" aria-label="${k} copies">×${k}</span>`:''}`+
+    `<a href="img/cards/card-${f}.jpg" target="_blank"><img src="img/cards/card-${f}.jpg" alt="${n} (${s}): ${t}" loading="lazy" width="240" height="335"></a>`+
+    `<figcaption><b>${n}</b>${t}</figcaption></figure>`).join('');
+  const btns=[...document.querySelectorAll('.deck-tabs button')];
+  btns.forEach(b=>b.addEventListener('click',()=>{
+    btns.forEach(x=>x.setAttribute('aria-pressed',x===b));
+    g.querySelectorAll('.gcard').forEach(el=>{el.hidden=b.dataset.suit!=='all'&&el.dataset.suit!==b.dataset.suit;});
+  }));
+})();
+
+/* Sliced autumn sun, seeded pine forest and off-screen pausing (adapted from the Hegemony page) */
+(function(){
+  const INK='#1f1a16', SUN='#e2553b', GAP='#fbf4e2';
+  const PINES=['#2f5e3a','#3f7a45','#24492d','#4c8a4f'];
+  const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let uid = 0;
+  function buildSun(g){
+    const d=g.dataset, cx=+d.cx, cy=+d.cy, r=+d.r, n=+(d.bars||7), dur=+(d.dur||6), id='sun'+(uid++);
+    const st=+d.start, en=+d.end;
+    const top=cy-r+2*r*st, bot=cy-r+2*r*en, h0=2, h1=r*(en-st)*0.32, x=cx-r, w=2*r;
+    let out=`<clipPath id="${id}"><circle cx="${cx}" cy="${cy}" r="${r}"/></clipPath>`+
+            `<g clip-path="url(#${id})"><rect x="${x}" y="${cy-r}" width="${w}" height="${2*r}" fill="${SUN}"/>`;
+    for(let i=0;i<n;i++){
+      const t=i/n;
+      if(REDUCE){
+        out+=`<rect x="${x}" width="${w}" y="${(top+(bot-top)*t).toFixed(1)}" height="${(h0+(h1-h0)*t).toFixed(1)}" fill="${GAP}"/>`;
+      } else {
+        const b=(-t*dur).toFixed(2);
+        out+=`<rect x="${x}" width="${w}" y="${top}" height="${h0}" fill="${GAP}">`+
+             `<animate attributeName="y" values="${top};${bot}" dur="${dur}s" begin="${b}s" repeatCount="indefinite"/>`+
+             `<animate attributeName="height" values="${h0};${h1}" dur="${dur}s" begin="${b}s" repeatCount="indefinite"/></rect>`;
+      }
+    }
+    out+=`</g><circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${INK}" stroke-width="${d.stroke||3}"/>`;
+    g.innerHTML=out;
+  }
+  function rng(seed){ return ()=>{ seed=(seed*16807)%2147483647; return (seed-1)/2147483646; }; }
+  function buildForest(g){
+    const d=g.dataset, W=+d.w, base=+d.base, min=+d.min, max=+d.max, r=rng(+d.seed||1);
+    let x=-20, out='';
+    while(x<W){
+      const w=Math.round(34+r()*40), h=Math.round(min+r()*(max-min)), cx=x+w/2, top=base-h;
+      const fill=PINES[Math.floor(r()*PINES.length)];
+      // three stacked triangles + trunk = one pine
+      let tree=`<rect x="${cx-3}" y="${base-14}" width="6" height="16" fill="${INK}"/>`;
+      for(let k=0;k<3;k++){
+        const ty=top+k*h*0.24, bw=w*(0.55+k*0.22), by=ty+h*0.42;
+        tree+=`<polygon points="${cx},${ty} ${cx-bw/2},${by} ${cx+bw/2},${by}" fill="${fill}" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/>`;
+      }
+      out+=r()<.35&&!REDUCE?`<g class="leafy" style="animation-delay:${(-r()*3).toFixed(2)}s">${tree}</g>`:tree;
+      x+=Math.round(w*0.62+r()*10);
+    }
+    g.innerHTML=out;
+  }
+  document.querySelectorAll('[data-sun]').forEach(buildSun);
+  document.querySelectorAll('[data-forest]').forEach(buildForest);
+  const svgs=[...document.querySelectorAll('.hero-sun svg')];
+  if(REDUCE){
+    svgs.forEach(sv=>{ try{ sv.setCurrentTime(1.6); sv.pauseAnimations(); }catch(e){} });
+  } else if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{
+      try{ e.isIntersecting ? e.target.unpauseAnimations() : e.target.pauseAnimations(); }catch(err){}
+    }),{rootMargin:'100px'});
+    svgs.forEach(sv=>io.observe(sv));
+  }
+})();
+</script>
+</body>
+</html>

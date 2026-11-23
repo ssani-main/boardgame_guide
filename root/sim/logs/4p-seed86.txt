@@ -1,0 +1,223 @@
+R00 Game     | Factions Marquise, Eyrie, Alliance, Vagabond; seating Vagabond → Eyrie → Alliance → Marquise
+R00 Marquise | keep in mouse-2; sawmill/workshop/recruiter at mouse-2, mouse-2, rabbit-5
+R00 Eyrie    | roost and 6 warriors in rabbit-4; leader Charismatic
+R00 Alliance | 3 supporters drawn; nothing on the map
+R00 Vagabond | Ranger in forest F6; quests Give a Speech (fox), Logistics Help (fox), Repair a Shed (fox)
+R01 Vagabond | slips to fox-6
+R01 Vagabond | explores the ruin in fox-6: finds a boot
+R01 Vagabond | +1 VP (explore) → 1
+R01 Vagabond | aids Marquise with a bird card
+R01 Vagabond | relationship with Marquise improves to 1
+R01 Vagabond | +1 VP (relationship Marquise) → 2
+R01 Vagabond | Evening: draws 1
+R01 Eyrie    | adds rabbit to move, bird to move → Decree rec B | mov RB | bat B | bui 
+R01 Eyrie    | Decree recruit: 2 in rabbit-4
+R01 Eyrie    | moves 4 warriors rabbit-4 → fox-8
+R01 Eyrie    | moves 4 warriors fox-8 → mouse-7
+R01 Eyrie    | battles Marquise in mouse-7
+R01 Marquise | ambush! 2 immediate hits
+R01 Eyrie    | rolls 2/0: deals 2, takes 0
+R01 Eyrie    | Evening: draws 1
+R01 Alliance | spreads sympathy: sympathy in fox-1
+R01 Alliance | spreads sympathy: sympathy in rabbit-5
+R01 Alliance | +1 VP (sympathy #2) → 1
+R01 Alliance | spreads sympathy: sympathy in mouse-9
+R01 Alliance | +1 VP (sympathy #3) → 2
+R01 Alliance | Evening: draws 1; supporters 0
+R01 Marquise | Birdsong: 1 wood at sawmills
+R01 Marquise | builds a workshop in fox-1
+R01 Marquise | +2 VP (workshop #2) → 2
+R01 Marquise | recruits 1 warrior
+R01 Marquise | battles Alliance in fox-1
+R01 Marquise | rolls 1/0: deals 1, takes 0 (defenseless +1)
+R01 Alliance | Outrage in fox-1: Marquise gives Birdy Bindle (bird) as a supporter
+R01 Marquise | +1 VP (removed Alliance sym) → 3
+R01 Marquise | Evening: draws 1
+R02 Vagabond | slips to mouse-11
+R02 Vagabond | explores the ruin in mouse-11: finds a bag
+R02 Vagabond | +1 VP (explore) → 3
+R02 Vagabond | moves to fox-6
+R02 Vagabond | completes quest Logistics Help (fox)
+R02 Vagabond | draws 2 for the quest
+R02 Vagabond | aids Marquise with a fox card
+R02 Vagabond | aids Marquise with a fox card
+R02 Vagabond | relationship with Marquise improves to 2
+R02 Vagabond | +2 VP (relationship Marquise) → 5
+R02 Vagabond | Evening: draws 1
+R02 Eyrie    | adds mouse to move → Decree rec B | mov RBM | bat B | bui 
+R02 Eyrie    | Decree recruit: 2 in rabbit-4
+R02 Eyrie    | moves 4 warriors rabbit-4 → fox-8
+R02 Eyrie    | moves 2 warriors mouse-7 → rabbit-3
+R02 Eyrie    | moves 3 warriors fox-8 → mouse-7
+R02 Eyrie    | battles Marquise in rabbit-3
+R02 Eyrie    | rolls 2/1: deals 2, takes 1
+R02 Eyrie    | Evening: draws 1
+R02 Alliance | spreads sympathy: sympathy in fox-1
+R02 Alliance | +1 VP (sympathy #3) → 3
+R02 Alliance | crafts Woodland Runners (boot)
+R02 Alliance | +1 VP (crafted boot) → 4
+R02 Alliance | crafts Smuggler's Trail (bag)
+R02 Alliance | +1 VP (crafted bag) → 5
+R02 Alliance | mobilizes a fox card
+R02 Alliance | mobilizes a mouse card
+R02 Alliance | Evening: draws 1; supporters 2
+R02 Marquise | Birdsong: 1 wood at sawmills
+R02 Marquise | crafts Root Tea (tea)
+R02 Marquise | +2 VP (crafted tea) → 5
+R02 Marquise | builds a sawmill in rabbit-5
+R02 Marquise | +1 VP (sawmill #2) → 6
+R02 Marquise | recruits 1 warrior
+R02 Marquise | battles Alliance in fox-1
+R02 Marquise | rolls 2/0: deals 1, takes 0 (defenseless +1)
+R02 Alliance | Outrage in fox-1: Marquise gives Stand and Deliver! (fox) as a supporter
+R02 Marquise | +1 VP (removed Alliance sym) → 7
+R02 Marquise | Evening: draws 1
+R03 Vagabond | slips to rabbit-3
+R03 Vagabond | aids Eyrie with a rabbit card
+R03 Vagabond | relationship with Eyrie improves to 1
+R03 Vagabond | +1 VP (relationship Eyrie) → 6
+R03 Vagabond | aids Eyrie with a rabbit card
+R03 Vagabond | aids Eyrie with a bird card
+R03 Vagabond | relationship with Eyrie improves to 2
+R03 Vagabond | +2 VP (relationship Eyrie) → 8
+R03 Vagabond | Evening: draws 1
+R03 Eyrie    | adds fox to build, bird to build → Decree rec B | mov RBM | bat B | bui FB
+R03 Eyrie    | Decree recruit: 2 in rabbit-4
+R03 Eyrie    | moves 3 warriors rabbit-4 → fox-8
+R03 Eyrie    | moves 2 warriors mouse-7 → rabbit-3
+R03 Eyrie    | moves 2 warriors fox-8 → mouse-7
+R03 Eyrie    | battles Marquise in fox-8
+R03 Eyrie    | rolls 2/1: deals 2, takes 1
+R03 Eyrie    | Decree build: roost in fox-8
+R03 Eyrie    | Decree build: roost in rabbit-3
+R03 Eyrie    | +2 VP (3 roosts) → 2
+R03 Eyrie    | Evening: draws 2
+R03 Alliance | spreads sympathy: sympathy in fox-1
+R03 Alliance | +1 VP (sympathy #3) → 6
+R03 Alliance | Evening: draws 1; supporters 2
+R03 Marquise | Birdsong: 2 wood at sawmills
+R03 Marquise | builds a sawmill in fox-6
+R03 Marquise | +2 VP (sawmill #3) → 9
+R03 Marquise | recruits 1 warrior
+R03 Marquise | battles Alliance in fox-1
+R03 Marquise | rolls 1/0: deals 1, takes 0 (defenseless +1)
+R03 Alliance | Outrage in fox-1: Marquise gives Tax Collector (fox) as a supporter
+R03 Marquise | +1 VP (removed Alliance sym) → 10
+R03 Marquise | Evening: draws 1
+R04 Vagabond | Evening: draws 1
+R04 Eyrie    | adds rabbit to move → Decree rec B | mov RBMR | bat B | bui FB
+R04 Eyrie    | Decree recruit: 2 in rabbit-4
+R04 Eyrie    | moves 1 warrior rabbit-3 → mouse-7
+R04 Eyrie    | moves 4 warriors mouse-7 → fox-12
+R04 Eyrie    | moves 2 warriors rabbit-4 → mouse-9
+R04 Alliance | Outrage in mouse-9: Eyrie gives Scouting Party (mouse) as a supporter
+R04 Eyrie    | moves 3 warriors fox-12 → mouse-7
+R04 Eyrie    | battles Alliance in mouse-9
+R04 Eyrie    | rolls 3/2: deals 3, takes 0 (defenseless +1)
+R04 Alliance | Outrage in mouse-9: Eyrie gives Sappers (bird) as a supporter
+R04 Eyrie    | +1 VP (removed Alliance sym) → 3
+R04 Eyrie    | Decree build: roost in fox-12
+R04 Eyrie    | Decree build: roost in mouse-7
+R04 Eyrie    | +4 VP (5 roosts) → 7
+R04 Eyrie    | Evening: draws 2
+R04 Alliance | spreads sympathy: sympathy in fox-1
+R04 Alliance | +1 VP (sympathy #2) → 7
+R04 Alliance | spreads sympathy: sympathy in rabbit-10
+R04 Alliance | +1 VP (sympathy #3) → 8
+R04 Alliance | mobilizes a mouse card
+R04 Alliance | Evening: draws 1; supporters 4
+R04 Marquise | Birdsong: 3 wood at sawmills
+R04 Marquise | builds a sawmill in fox-6
+R04 Marquise | +3 VP (sawmill #4) → 13
+R04 Marquise | recruits 1 warrior
+R04 Marquise | battles Alliance in fox-1
+R04 Marquise | rolls 3/2: deals 2, takes 0 (defenseless +1)
+R04 Alliance | Outrage in fox-1: Marquise has no fox card, shows hand; Alliance draws a supporter
+R04 Marquise | +1 VP (removed Alliance sym) → 14
+R04 Marquise | Evening: draws 1
+R05 Vagabond | slips to fox-6
+R05 Vagabond | strikes a Marquise warrior in fox-6
+R05 Vagabond | Marquise is now Hostile
+R05 Vagabond | moves to mouse-2
+R05 Vagabond | Evening: draws 1
+R05 Eyrie    | adds mouse to recruit, rabbit to recruit → Decree rec BMR | mov RBMR | bat B | bui FB
+R05 Eyrie    | crafts Root Tea (tea)
+R05 Eyrie    | +1 VP (crafted tea) → 8
+R05 Eyrie    | Decree recruit: 2 in mouse-7
+R05 Eyrie    | Decree recruit: 2 in rabbit-4
+R05 Eyrie    | Decree recruit: 2 in fox-12
+R05 Eyrie    | moves 2 warriors rabbit-4 → mouse-9
+R05 Eyrie    | moves 4 warriors mouse-9 → fox-1
+R05 Eyrie    | moves 2 warriors rabbit-3 → fox-6
+R05 Eyrie    | moves 4 warriors fox-1 → mouse-9
+R05 Eyrie    | battles Marquise in fox-6
+R05 Eyrie    | rolls 3/1: deals 3, takes 0 (defenseless +1)
+R05 Eyrie    | +1 VP (removed Marquise sawmill) → 9
+R05 Eyrie    | +1 VP (removed Marquise sawmill) → 10
+R05 Eyrie    | Decree build: roost in fox-6
+R05 Eyrie    | Decree build: roost in mouse-9
+R05 Eyrie    | +5 VP (7 roosts) → 15
+R05 Eyrie    | Evening: draws 3
+R05 Alliance | spreads sympathy: sympathy in fox-1
+R05 Alliance | +1 VP (sympathy #3) → 9
+R05 Alliance | spreads sympathy: sympathy in mouse-9
+R05 Alliance | +1 VP (sympathy #4) → 10
+R05 Alliance | mobilizes a rabbit card
+R05 Alliance | Evening: draws 1; supporters 2
+R05 Marquise | Birdsong: 2 wood at sawmills
+R05 Marquise | builds a sawmill in rabbit-10
+R05 Marquise | +2 VP (sawmill #3) → 16
+R05 Marquise | recruits 1 warrior
+R05 Marquise | battles Alliance in fox-1
+R05 Marquise | rolls 3/2: deals 2, takes 0 (defenseless +1)
+R05 Alliance | Outrage in fox-1: Marquise has no fox card, shows hand; Alliance draws a supporter
+R05 Marquise | +1 VP (removed Alliance sym) → 17
+R05 Marquise | Evening: draws 1
+R05 Marquise | discards 1 down to 5
+R06 Vagabond | slips to rabbit-10
+R06 Vagabond | explores the ruin in rabbit-10: finds a hammer
+R06 Vagabond | +1 VP (explore) → 9
+R06 Vagabond | aids Alliance with a rabbit card, takes their boot
+R06 Vagabond | relationship with Alliance improves to 1
+R06 Vagabond | +1 VP (relationship Alliance) → 10
+R06 Vagabond | aids Alliance with a bird card, takes their bag
+R06 Vagabond | aids Alliance with a bird card
+R06 Vagabond | relationship with Alliance improves to 2
+R06 Vagabond | +2 VP (relationship Alliance) → 12
+R06 Vagabond | moves to fox-1
+R06 Vagabond | Evening: draws 1
+R06 Vagabond | over item limit: crossbow removed from the game
+R06 Vagabond | over item limit: hammer removed from the game
+R06 Vagabond | over item limit: torch removed from the game
+R06 Eyrie    | adds fox to recruit → Decree rec BMRF | mov RBMR | bat B | bui FB
+R06 Eyrie    | crafts Protection Racket (coins)
+R06 Eyrie    | +1 VP (crafted coins) → 16
+R06 Eyrie    | activates fox Dominance at 16 VP and stops scoring
+R06 Eyrie    | Decree recruit: 2 in mouse-9
+R06 Eyrie    | Decree recruit: 2 in rabbit-3
+R06 Eyrie    | cannot recruit in a fox clearing
+R06 Eyrie    | TURMOIL: humiliated for 4 bird cards
+R06 Eyrie    | Charismatic deposed; new leader Builder
+R06 Eyrie    | Evening: draws 3
+R06 Alliance | REVOLT in mouse-9
+R06 Alliance | +1 VP (removed Eyrie roost) → 11
+R06 Alliance | base placed with 1 warriors; officers 1
+R06 Alliance | crafts Sappers (persistent)
+R06 Alliance | crafts Better Burrow Bank (persistent)
+R06 Alliance | mobilizes a bird card
+R06 Alliance | trains an officer (2)
+R06 Alliance | recruits in mouse-9
+R06 Alliance | recruits in mouse-9
+R06 Alliance | Evening: draws 2; supporters 2
+R06 Marquise | Birdsong: 3 wood at sawmills
+R06 Marquise | builds a sawmill in rabbit-10
+R06 Marquise | +3 VP (sawmill #4) → 20
+R06 Marquise | recruits 1 warrior
+R06 Marquise | battles Eyrie in fox-12
+R06 Marquise | rolls 3/2: deals 1, takes 2
+R06 Marquise | Evening: draws 1
+R06 Marquise | discards 1 down to 5
+R07 Vagabond | moves to rabbit-5
+R07 Vagabond | Evening: draws 1
+R07 Eyrie    | rules the clearings on its fox Dominance card
+R07 Game     | GAME OVER: Eyrie win (dominance); Marquise 20, Eyrie 16, Alliance 11, Vagabond 12
