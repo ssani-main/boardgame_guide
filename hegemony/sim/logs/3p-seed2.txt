@@ -1,0 +1,444 @@
+R1 Setup       | Setup for 3 players: Working, Middle, Capitalist. Policies 1C 2B 3A 4B 5C 6B 7B, Treasury 120₩, Tax Multiplier 5.
+R1 Action      | Working: plays card «Student movement»
+R1 Action      | Working: adds 2 cubes to the bag
+R1 Action      | Working: proposes Bill 5C → 5B
+R1 Action      | Middle: plays card «Investment opportunities»
+R1 Action      | Middle: builds Music School (14₩)
+R1 Action      | Capitalist: plays card «Investment opportunities»
+R1 Action      | Capitalist: builds Big Farm for 20₩ (wage L2)
+R1 Action      | Working: discards «Boost domestic tourism» → Basic Action: Assign Workers
+R1 Action      | Working: assigns 1 worker(s) to Doctor's Office (Middle)
+R1 Action      | Working: assigns 1 worker(s) to Convenience Store (Middle)
+R1 Action      | Middle: discards «Health crisis» → Basic Action: Buy health
+R1 Action      | Middle: moves 1 health from own storage
+R1 Action      | Middle: buys 2 health from State for 10₩
+R1 Action      | Middle: +1 VP (Prosperity (Healthcare)) → 1
+R1 Action      | Middle: +2 VP (Healthcare bonus) → 3
+R1 Action      | Middle: +1 unskilled worker from Healthcare
+R1 Action      | Capitalist: discards «Business expansion» → Basic Action: Propose Bill
+R1 Action      | Capitalist: proposes Bill 3A → 3B
+R1 Action      | Working: discards «Unemployment benefits» → Basic Action: Buy health
+R1 Action      | Working: buys 3 health from State for 15₩
+R1 Action      | Working: +1 VP (Prosperity (Healthcare)) → 1
+R1 Action      | Working: +2 VP (Healthcare bonus) → 3
+R1 Action      | Working: +1 unskilled worker from Healthcare
+R1 Action      | Middle: plays card «Immigration reform»
+R1 Action      | Middle: adds 2 cubes to the bag
+R1 Action      | Middle: proposes Bill 7B → 7A
+R1 Action      | Capitalist: plays card «Tap into new markets»
+R1 Action      | Capitalist: adds 2 cubes to the bag
+R1 Action      | Capitalist: proposes Bill 6B → 6A
+R1 Action      | Working: plays card «Public sector overtime»
+R1 Action      | Working: Public sector overtime at University Hospital: +6 health for the State
+R1 Action      | Working: buys 3 health from State for 15₩
+R1 Action      | Working: +2 VP (Prosperity (Healthcare)) → 5
+R1 Action      | Working: +2 VP (Healthcare bonus) → 7
+R1 Action      | Working: +1 unskilled worker from Healthcare
+R1 Action      | Middle: discards «Investment opportunities» → Basic Action: Buy health
+R1 Action      | Middle: buys 3 health from State for 15₩
+R1 Action      | Middle: +2 VP (Prosperity (Healthcare)) → 5
+R1 Action      | Middle: +2 VP (Healthcare bonus) → 7
+R1 Action      | Middle: +1 unskilled worker from Healthcare
+R1 Action      | Capitalist: discards «Endorse political campaign» → Basic Action: Propose Bill
+R1 Action      | Capitalist: proposes Bill 2B → 2C
+R1 Action      | Working: plays card «Affordable housing»
+R1 Action      | Working: +5 VP (Affordable housing) → 12
+R1 Action      | Middle: discards «Small business grant» → Basic Action: Assign Workers
+R1 Action      | Middle: assigns 3 worker(s) to Clinic (Capitalist)
+R1 Action      | Capitalist: plays card «Interest groups»
+R1 Action      | Capitalist: Interest groups swaps 3 cubes for own
+R1 Production  | State: University Hospital, pays 30₩ wage (L2), produces 6 health
+R1 Production  | State: Technical University, pays 30₩ wage (L2), produces 6 edu
+R1 Production  | Capitalist: Clinic, pays 20₩ wage (L2), produces 6 health
+R1 Production  | Capitalist: College, pays 20₩ wage (L2), produces 6 edu
+R1 Production  | Capitalist: Shopping Mall, pays 20₩ wage (L2), produces 6 lux
+R1 Production  | Capitalist: Supermarket, pays 20₩ wage (L2), produces 4 food
+R1 Production  | Middle: Doctor's Office, pays 8₩ to its employee, produces 4 health
+R1 Production  | Middle: Convenience Store, pays 8₩ to its employee, produces 3 food
+R1 Production  | Middle: Music School, pays 8₩ to its employee, produces 4 edu
+R1 Production  | Middle: covers Food for Population 4
+R1 Production  | Working: buys 4 food from Capitalist for 48₩
+R1 Production  | Working: covers Food for Population 4
+R1 Production  | Capitalist: taxes: Employment 4×5=20₩, Corporate 24₩
+R1 Production  | Middle: taxes: Income 4×3=12₩, Employment 3×5=15₩
+R1 Production  | Working: Income tax 4×4=16₩
+R1 Production  | State Treasury 85₩ → 172₩
+R1 Elections   | Vote 2B→2C [W:against M:against C:for] cubes WCWCM + Influence Capitalist 1: 3–3 PASSED
+R1 Elections   | Capitalist: +3 VP (own Bill passed) → 3
+R1 Elections   | Policy 2 is now C
+R1 Elections   | Capitalist: lowers wages to L1
+R1 Elections   | Vote 3A→3B [W:for M:for C:for] cubes CMWCC: 5–0 PASSED
+R1 Elections   | Capitalist: +3 VP (own Bill passed) → 6
+R1 Elections   | Working: +1 VP (supported a Bill) → 13
+R1 Elections   | Middle: +1 VP (supported a Bill) → 8
+R1 Elections   | Policy 3 is now B
+R1 Elections   | Vote 5C→5B [W:for M:for C:against] cubes MWWMW: 5–0 PASSED
+R1 Elections   | Working: +3 VP (own Bill passed) → 16
+R1 Elections   | Middle: +1 VP (supported a Bill) → 9
+R1 Elections   | Policy 5 is now B
+R1 Elections   | Vote 6B→6A [W:against M:against C:for] cubes CWCWC: 3–2 PASSED
+R1 Elections   | Capitalist: +3 VP (own Bill passed) → 9
+R1 Elections   | Policy 6 is now A
+R1 Elections   | Vote 7B→7A [W:for M:for C:against] cubes CCCWW + Influence Middle 1: 3–3 PASSED
+R1 Elections   | Middle: +3 VP (own Bill passed) → 12
+R1 Elections   | Working: +1 VP (supported a Bill) → 17
+R1 Elections   | Policy 7 is now A
+R1 Scoring     | Middle: +3 VP (Prosperity (scoring bonus)) → 15
+R1 Scoring     | Capitalist: +2 VP (Wealth table, Capital 44₩) → 11
+R1 Scoring     | Capitalist: +6 VP (Wealth marker +2 space(s)) → 17
+R2 Preparation | --- Round 2 begins ---
+R2 Preparation | Working: Prosperity drops to 1; workers now 14 (Population 4)
+R2 Preparation | Middle: Prosperity drops to 1; workers now 14 (Population 4)
+R2 Action      | Working: plays card «Need for change»
+R2 Action      | Working: proposes Bill 2C → 2B
+R2 Action      | Working: proposes Bill 6A → 6B
+R2 Action      | Middle: plays card «Personal consumption»
+R2 Action      | Middle: moves 4 health from own storage
+R2 Action      | Middle: +2 VP (Prosperity (Healthcare)) → 17
+R2 Action      | Middle: +2 VP (Healthcare bonus) → 19
+R2 Action      | Middle: +1 unskilled worker from Healthcare
+R2 Action      | Capitalist: discards «Competitive wages» → Basic Action: Sell to Foreign Market
+R2 Action      | Capitalist: sells to the Foreign Market for 115₩
+R2 Action      | Working: discards «Need for change» → Basic Action: Buy health
+R2 Action      | Working: buys 4 health from State for 20₩
+R2 Action      | Working: buys 1 health from Capitalist for 8₩
+R2 Action      | Working: +2 VP (Prosperity (Healthcare)) → 19
+R2 Action      | Working: +2 VP (Healthcare bonus) → 21
+R2 Action      | Working: +1 unskilled worker from Healthcare
+R2 Action      | Middle: discards «Employment subsidy» → Basic Action: Buy edu
+R2 Action      | Middle: moves 4 edu from own storage
+R2 Action      | Middle: buys 1 edu from State for 5₩
+R2 Action      | Middle: +3 VP (Prosperity (Education)) → 22
+R2 Action      | Middle: trains a worker → skilled (media)
+R2 Action      | Capitalist: discards «Business grants» → Basic Action: Build Company (Department Store)
+R2 Action      | Capitalist: builds Department Store for 32₩ (wage L1)
+R2 Action      | Working: discards «Healthcare benefits» → Basic Action: Propose Bill
+R2 Action      | Working: proposes Bill 4B → 4A
+R2 Action      | Middle: discards «Import subsidy» → Basic Action: Build Company (Tutoring Center)
+R2 Action      | Middle: builds Tutoring Center (12₩)
+R2 Action      | Capitalist: plays card «Push political agenda»
+R2 Action      | Capitalist: proposes Bill 3B → 3C
+R2 Action      | Capitalist: proposes Bill 5B → 5C
+R2 Action      | Working: plays card «Proletarians of the world, unite!»
+R2 Action      | Working: adds 5 cubes to the bag
+R2 Action      | Middle: discards «Labor market deregulation» → Basic Action: Assign Workers
+R2 Action      | Middle: assigns 3 worker(s) to National Public Broadcasting (State)
+R2 Action      | Capitalist: discards «Exit strategy» → Basic Action: Build Company (Fishery)
+R2 Action      | Capitalist: builds Fishery for 22₩ (wage L1)
+R2 Action      | Working: plays card «Interest groups»
+R2 Action      | Working: Interest groups swaps 3 cubes for own
+R2 Action      | Middle: discards «Small business grant» → Basic Action: Extra Shift
+R2 Action      | Middle: Extra Shift at Doctor's Office: +4 health
+R2 Action      | Capitalist: plays card «Bid rigging»
+R2 Action      | Capitalist: sells 4 lux to the State for 40₩
+R2 Production  | State: University Hospital, pays 25₩ wage (L1), produces 6 health
+R2 Production  | State: Technical University, pays 25₩ wage (L1), produces 6 edu (1 stored)
+R2 Production  | State: National Public Broadcasting, pays 25₩ wage (L1), produces 4 infl
+R2 Production  | Capitalist: Clinic, pays 10₩ wage (L1), produces 6 health
+R2 Production  | Capitalist: College, pays 10₩ wage (L1), produces 6 edu
+R2 Production  | Capitalist: Shopping Mall, pays 15₩ wage (L1), produces 6 lux
+R2 Production  | Capitalist: Supermarket, pays 15₩ wage (L1), produces 4 food
+R2 Production  | Middle: Doctor's Office, pays 6₩ to its employee, produces 4 health
+R2 Production  | Middle: Convenience Store, pays 6₩ to its employee, produces 3 food
+R2 Production  | Middle: Music School, pays 6₩ to its employee, produces 4 edu
+R2 Production  | Middle: Tutoring Center, pays 6₩ to its employee, produces 4 edu
+R2 Production  | Middle: buys 2 food from Capitalist for 30₩
+R2 Production  | Middle: covers Food for Population 5
+R2 Production  | Working: buys 3 food from Capitalist for 45₩
+R2 Production  | Working: buys 2 food from Foreign Market for 40₩
+R2 Production  | Working: covers Food for Population 5
+R2 Production  | Capitalist: taxes: Employment 4×4=16₩, Corporate 15₩
+R2 Production  | Middle: taxes: Income 2×4=8₩, Employment 4×4=16₩
+R2 Production  | Working: forced Loan +50₩ (Income tax)
+R2 Production  | Working: Income tax 2×5=10₩
+R2 Production  | State Treasury 102₩ → 167₩
+R2 Elections   | Vote 2C→2B [W:for M:for C:against] cubes WWCMW: 4–1 PASSED
+R2 Elections   | Working: +3 VP (own Bill passed) → 24
+R2 Elections   | Middle: +1 VP (supported a Bill) → 23
+R2 Elections   | Policy 2 is now B
+R2 Elections   | Vote 3B→3C [W:against M:against C:for] cubes WCWMC + Influence Capitalist 1: 3–3 PASSED
+R2 Elections   | Capitalist: +3 VP (own Bill passed) → 20
+R2 Elections   | Policy 3 is now C
+R2 Elections   | Vote 4B→4A [W:for M:against C:against] cubes MWWMW: 3–2 PASSED
+R2 Elections   | Working: +3 VP (own Bill passed) → 27
+R2 Elections   | Policy 4 is now A
+R2 Elections   | Vote 5B→5C [W:against M:against C:for] cubes WWWWM: 0–5 failed
+R2 Elections   | Vote 6A→6B [W:for M:for C:against] cubes CMWWC: 3–2 PASSED
+R2 Elections   | Working: +3 VP (own Bill passed) → 30
+R2 Elections   | Middle: +1 VP (supported a Bill) → 24
+R2 Elections   | Policy 6 is now B
+R2 Scoring     | Middle: +4 VP (Prosperity (scoring bonus)) → 28
+R2 Scoring     | Capitalist: +5 VP (Wealth table, Capital 122₩) → 25
+R2 Scoring     | Capitalist: +9 VP (Wealth marker +3 space(s)) → 34
+R3 Preparation | --- Round 3 begins ---
+R3 Preparation | Working: pays 5₩ Loan interest
+R3 Preparation | Working: Prosperity drops to 1; workers now 17 (Population 5)
+R3 Preparation | Middle: Prosperity drops to 2; workers now 17 (Population 5)
+R3 Action      | Working: plays card «Supplemental income program»
+R3 Action      | Working: receives 11₩ from the State
+R3 Action      | Working: buys 4 health from State for 0₩
+R3 Action      | Working: buys 4 health from Capitalist for 32₩
+R3 Action      | Working: +2 VP (Prosperity (Healthcare)) → 32
+R3 Action      | Working: +2 VP (Healthcare bonus) → 34
+R3 Action      | Working: +1 unskilled worker from Healthcare
+R3 Action      | Middle: discards «Fake news» → Basic Action: Buy health
+R3 Action      | Middle: moves 5 health from own storage
+R3 Action      | Middle: +3 VP (Prosperity (Healthcare)) → 31
+R3 Action      | Middle: +2 VP (Healthcare bonus) → 33
+R3 Action      | Middle: +1 unskilled worker from Healthcare
+R3 Action      | Capitalist: plays card «Public opinion polling»
+R3 Action      | Capitalist: proposes Bill 4A → 4B
+R3 Action      | Capitalist: Public opinion polling reveals CMCWC
+R3 Action      | Capitalist: calls a free Immediate Vote with the revealed cubes
+R3 Action      | Vote 4A→4B [W:against M:for C:for] cubes CMCWC: 4–1 PASSED
+R3 Action      | Capitalist: +3 VP (own Bill passed) → 37
+R3 Action      | Middle: +1 VP (supported a Bill) → 34
+R3 Action      | Policy 4 is now B
+R3 Action      | Working: plays card «Public opinion polling»
+R3 Action      | Working: proposes Bill 2B → 2A
+R3 Action      | Working: Public opinion polling reveals MMCWC
+R3 Action      | Middle: discards «Specialization» → Basic Action: Buy edu
+R3 Action      | Middle: moves 6 edu from own storage
+R3 Action      | Middle: +4 VP (Prosperity (Education)) → 38
+R3 Action      | Middle: trains a worker → skilled (food)
+R3 Action      | Capitalist: discards «Competitive wages» → Basic Action: Build Company (Luxury Factory (automated))
+R3 Action      | Capitalist: builds Luxury Factory (automated) for 45₩ (wage L2)
+R3 Action      | Working: plays card «Cooperative farm»
+R3 Action      | Working: starts a Cooperative Farm with 3 workers
+R3 Action      | Middle: discards «State Scholarship» → Basic Action: Assign Workers
+R3 Action      | Middle: assigns 2 worker(s) to Fishery (Capitalist)
+R3 Action      | Capitalist: discards «Extra shift» → Basic Action: Sell to Foreign Market
+R3 Action      | Capitalist: sells to the Foreign Market for 55₩
+R3 Action      | Working: plays card «Healthcare movement»
+R3 Action      | Working: adds 2 cubes to the bag
+R3 Action      | Working: proposes Bill 4B → 4A
+R3 Action      | Middle: plays card «Public opinion polling»
+R3 Action      | Middle: proposes Bill 3C → 3B
+R3 Action      | Middle: Public opinion polling reveals WWCCC
+R3 Action      | Capitalist: plays card «Foreign partner»
+R3 Action      | Capitalist: Business Deal: 3 Food + 3 Luxury for 30₩ + 6₩ tariff
+R3 Action      | Capitalist: sells to the Foreign Market for 20₩
+R3 Action      | Working: discards «Signing bonus» → Basic Action: Buy health
+R3 Action      | Working: buys 2 health from State for 10₩
+R3 Action      | Working: buys 1 health from Middle for 8₩
+R3 Action      | Working: +3 VP (Prosperity (Healthcare)) → 37
+R3 Action      | Working: +2 VP (Healthcare bonus) → 39
+R3 Action      | Working: +1 unskilled worker from Healthcare
+R3 Action      | Middle: plays card «Voice of middle class workers»
+R3 Action      | Middle: adds 7 cubes to the bag
+R3 Action      | Capitalist: discards «Technological progress» → Basic Action: Sell to Foreign Market
+R3 Action      | Capitalist: sells to the Foreign Market for 40₩
+R3 Production  | State: University Hospital, pays 30₩ wage (L2), produces 6 health
+R3 Production  | State: Technical University, pays 30₩ wage (L2), produces 6 edu (0 stored)
+R3 Production  | State: National Public Broadcasting, pays 30₩ wage (L2), produces 4 infl (2 stored)
+R3 Production  | Capitalist: Clinic, pays 20₩ wage (L2), produces 6 health
+R3 Production  | Capitalist: College, pays 20₩ wage (L2), produces 6 edu
+R3 Production  | Capitalist: Shopping Mall, pays 20₩ wage (L2), produces 6 lux
+R3 Production  | Capitalist: Supermarket, pays 20₩ wage (L2), produces 4 food
+R3 Production  | Capitalist: Fishery, pays 20₩ wage (L2), produces 4 food
+R3 Production  | Capitalist: Luxury Factory (automated), produces 4 lux
+R3 Production  | Middle: Doctor's Office, pays 8₩ to its employee, produces 4 health
+R3 Production  | Middle: Convenience Store, pays 8₩ to its employee, produces 3 food
+R3 Production  | Middle: Music School, pays 8₩ to its employee, produces 4 edu
+R3 Production  | Middle: Tutoring Center, pays 8₩ to its employee, produces 4 edu (2 stored)
+R3 Production  | Working: Cooperative Farm produces 2 Food
+R3 Production  | Middle: buys 3 food from Capitalist for 36₩
+R3 Production  | Middle: covers Food for Population 6
+R3 Production  | Working: buys 4 food from Capitalist for 48₩
+R3 Production  | Working: covers Food for Population 6
+R3 Production  | Capitalist: taxes: Employment 6×1=6₩, Corporate 10₩
+R3 Production  | Middle: taxes: Income 4×5=20₩, Employment 4×1=4₩
+R3 Production  | Working: Income tax 4×6=24₩
+R3 Production  | State Treasury 82₩ → 146₩
+R3 Elections   | Vote 2B→2A [W:for M:against C:against] cubes CCCMM: 0–5 failed
+R3 Elections   | Vote 3C→3B [W:for M:for C:against] cubes CMMWW: 4–1 PASSED
+R3 Elections   | Middle: +3 VP (own Bill passed) → 41
+R3 Elections   | Working: +1 VP (supported a Bill) → 40
+R3 Elections   | Policy 3 is now B
+R3 Elections   | Vote 4B→4A [W:for M:against C:against] cubes MMCMW: 1–4 failed
+R3 Scoring     | Capitalist: +7 VP (Wealth table, Capital 156₩) → 44
+R3 Scoring     | Capitalist: +6 VP (Wealth marker +2 space(s)) → 50
+R4 Preparation | --- Round 4 begins ---
+R4 Preparation | Working: pays 5₩ Loan interest
+R4 Preparation | Working: Prosperity drops to 2; workers now 21 (Population 7)
+R4 Preparation | Middle: Prosperity drops to 2; workers now 20 (Population 6)
+R4 Action      | Working: plays card «Unemployment benefits»
+R4 Action      | Working: receives 35₩ unemployment benefits
+R4 Action      | Working: buys 6 health from State for 30₩
+R4 Action      | Working: +3 VP (Prosperity (Healthcare)) → 43
+R4 Action      | Working: +2 VP (Healthcare bonus) → 45
+R4 Action      | Working: +1 unskilled worker from Healthcare
+R4 Action      | Middle: discards «Export subsidy» → Basic Action: Buy health
+R4 Action      | Middle: moves 6 health from own storage
+R4 Action      | Middle: +3 VP (Prosperity (Healthcare)) → 44
+R4 Action      | Middle: +2 VP (Healthcare bonus) → 46
+R4 Action      | Middle: +1 unskilled worker from Healthcare
+R4 Action      | Capitalist: plays card «Foreign market insight»
+R4 Action      | Capitalist: sells to the Foreign Market for 115₩
+R4 Action      | Working: discards «Immigration reform» → Basic Action: Demonstration
+R4 Action      | Working: Demonstration (8 unemployed)
+R4 Action      | Middle: discards «Foreign market insight» → Basic Action: Buy edu
+R4 Action      | Middle: moves 7 edu from own storage
+R4 Action      | Middle: +4 VP (Prosperity (Education)) → 50
+R4 Action      | Middle: trains a worker → skilled (food)
+R4 Action      | Capitalist: plays card «Taxed enough already»
+R4 Action      | Capitalist: adds 2 cubes to the bag
+R4 Action      | Capitalist: proposes Bill 3B → 3C
+R4 Action      | Working: plays card «State Scholarship»
+R4 Action      | Working: buys 6 edu from State for 15₩
+R4 Action      | Middle: plays card «Public sector overtime»
+R4 Action      | Middle: Public sector overtime at University Hospital: +6 health for the State
+R4 Action      | Middle: buys 7 health from State for 35₩
+R4 Action      | Middle: +5 VP (Prosperity (Healthcare)) → 55
+R4 Action      | Middle: +2 VP (Healthcare bonus) → 57
+R4 Action      | Middle: +1 unskilled worker from Healthcare
+R4 Action      | Capitalist: plays card «Global food crisis»
+R4 Action      | Capitalist: sells to the Foreign Market for 50₩
+R4 Action      | Working: plays card «Supplemental income program»
+R4 Action      | Working: receives 14₩ from the State
+R4 Action      | Working: buys 1 edu from State for 5₩
+R4 Action      | Working: buys 1 edu from Middle for 8₩
+R4 Action      | Working: +4 VP (Prosperity (Education)) → 49
+R4 Action      | Working: trains a worker → skilled (food)
+R4 Action      | Middle: discards «Unemployment initiative program» → Basic Action: Assign Workers
+R4 Action      | Middle: assigns 3 worker(s) to Big Farm (Capitalist)
+R4 Action      | Capitalist: plays card «Offshore companies»
+R4 Action      | Capitalist: Offshore companies: 82₩ moved from Revenue to Capital
+R4 Action      | Working: plays card «Workers' movement»
+R4 Action      | Working: adds 2 cubes to the bag
+R4 Action      | Working: proposes Bill 2B → 2A
+R4 Action      | Middle: discards «Immigration» → Basic Action: Build Company (Organic Farm)
+R4 Action      | Capitalist: discards «Unemployment initiative program» → Basic Action: Build Company (Bakery)
+R4 Action      | Capitalist: builds Bakery for 16₩ (wage L2), hires 2 Working worker(s)
+R4 Production  | State: University Hospital, pays 30₩ wage (L2), produces 6 health
+R4 Production  | State: Technical University, pays 30₩ wage (L2), produces 6 edu
+R4 Production  | State: National Public Broadcasting, pays 30₩ wage (L2), produces 4 infl (0 stored)
+R4 Production  | Capitalist: Clinic, pays 20₩ wage (L2), produces 6 health
+R4 Production  | Capitalist: College, pays 20₩ wage (L2), produces 6 edu
+R4 Production  | Capitalist: Shopping Mall, pays 20₩ wage (L2), produces 6 lux
+R4 Production  | Capitalist: Supermarket, pays 20₩ wage (L2), produces 4 food
+R4 Production  | Capitalist: Big Farm, pays 25₩ wage (L2), produces 6 food
+R4 Production  | Capitalist: Fishery, pays 20₩ wage (L2), produces 4 food (3 stored)
+R4 Production  | Capitalist: Luxury Factory (automated), produces 4 lux
+R4 Production  | Capitalist: Bakery, pays 20₩ wage (L2), produces 3 food (0 stored)
+R4 Production  | Middle: Doctor's Office, pays 8₩ to its employee, produces 4 health
+R4 Production  | Middle: Convenience Store, pays 8₩ to its employee, produces 3 food
+R4 Production  | Middle: Music School, pays 8₩ to its employee, produces 4 edu
+R4 Production  | Middle: Tutoring Center, pays 8₩ to its employee, produces 4 edu
+R4 Production  | Working: Cooperative Farm produces 2 Food
+R4 Production  | Working: Demonstration! 6 VP penalty to share out
+R4 Production  | Middle: -4 VP (Demonstration) → 53
+R4 Production  | Capitalist: -2 VP (Demonstration) → 48
+R4 Production  | Middle: buys 4 food from Capitalist for 48₩
+R4 Production  | Middle: covers Food for Population 7
+R4 Production  | Working: buys 4 food from Capitalist for 48₩
+R4 Production  | Working: buys 1 food from Foreign Market for 15₩
+R4 Production  | Working: covers Food for Population 7
+R4 Production  | Capitalist: taxes: Employment 8×4=32₩, Corporate 15₩
+R4 Production  | Middle: taxes: Income 4×6=24₩, Employment 4×4=16₩
+R4 Production  | Working: Income tax 4×7=28₩
+R4 Production  | State Treasury 67₩ → 182₩
+R4 Elections   | Vote 2B→2A [W:for M:against C:against] cubes WWMWM: 3–2 PASSED
+R4 Elections   | Working: +3 VP (own Bill passed) → 52
+R4 Elections   | Policy 2 is now A
+R4 Elections   | Vote 3B→3C [W:against M:against C:for] cubes WCMWW: 1–4 failed
+R4 Scoring     | Capitalist: +9 VP (Wealth table, Capital 209₩) → 57
+R4 Scoring     | Capitalist: +6 VP (Wealth marker +2 space(s)) → 63
+R5 Preparation | --- Round 5 begins ---
+R5 Preparation | Working: pays 5₩ Loan interest
+R5 Preparation | Working: Prosperity drops to 3; workers now 24 (Population 8)
+R5 Preparation | Middle: Prosperity drops to 3; workers now 24 (Population 8)
+R5 Action      | Working: discards «Boost domestic tourism» → Basic Action: Buy health
+R5 Action      | Working: buys 8 health from State for 40₩
+R5 Action      | Working: buys 2 health from Capitalist for 16₩
+R5 Action      | Working: +4 VP (Prosperity (Healthcare)) → 56
+R5 Action      | Working: +2 VP (Healthcare bonus) → 58
+R5 Action      | Working: +1 unskilled worker from Healthcare
+R5 Action      | Middle: discards «Higher education program» → Basic Action: Buy edu
+R5 Action      | Middle: moves 8 edu from own storage
+R5 Action      | Middle: +4 VP (Prosperity (Education)) → 57
+R5 Action      | Middle: trains a worker → skilled (lux)
+R5 Action      | Capitalist: discards «Fake news» → Basic Action: Sell to Foreign Market
+R5 Action      | Capitalist: sells to the Foreign Market for 135₩
+R5 Action      | Working: discards «Healthcare benefits» → Basic Action: Demonstration
+R5 Action      | Working: Demonstration (9 unemployed)
+R5 Action      | Middle: discards «Import subsidy» → Basic Action: Build Company (Phone Shop)
+R5 Action      | Middle: builds Phone Shop (14₩)
+R5 Action      | Capitalist: discards «Technological progress» → Basic Action: Propose Bill
+R5 Action      | Capitalist: proposes Bill 2A → 2B
+R5 Action      | Working: discards «Labor market deregulation» → Basic Action: Propose Bill
+R5 Action      | Working: proposes Bill 4B → 4A
+R5 Action      | Middle: discards «Land of opportunity» → Basic Action: Build Company (Organic Farm)
+R5 Action      | Middle: builds Organic Farm (16₩)
+R5 Action      | Capitalist: discards «Foreign recruitment» → Basic Action: Sell to Foreign Market
+R5 Action      | Capitalist: sells to the Foreign Market for 40₩
+R5 Action      | Working: discards «Signing bonus» → Basic Action: Propose Bill
+R5 Action      | Working: proposes Bill 1C → 1B
+R5 Action      | Working: calls an Immediate Vote
+R5 Action      | Vote 1C→1B [W:for M:for C:against] cubes CCWWM: 3–2 PASSED
+R5 Action      | Working: +3 VP (own Bill passed) → 61
+R5 Action      | Middle: +1 VP (supported a Bill) → 58
+R5 Action      | Policy 1 is now B
+R5 Action      | State: Public Sector grows: City Hospital opens (−20₩)
+R5 Action      | State: Public Sector grows: State University opens (−20₩)
+R5 Action      | State: Public Sector grows: National Radio opens (−20₩)
+R5 Action      | Middle: plays card «Growing business»
+R5 Action      | Middle: builds a free edu Storage
+R5 Action      | Capitalist: plays card «Industrialization»
+R5 Action      | Capitalist: builds Electronics Store for 22₩ (wage L3), hires 2 Middle worker(s)
+R5 Action      | Working: discards «Specialization» → Basic Action: Propose Bill
+R5 Action      | Working: proposes Bill 5B → 5A
+R5 Action      | Middle: plays card «Growing business»
+R5 Action      | Middle: builds a free food Storage
+R5 Action      | Capitalist: discards «Health crisis» → Basic Action: Propose Bill
+R5 Action      | Capitalist: proposes Bill 3B → 3C
+R5 Production  | State: University Hospital, pays 35₩ wage (L3), produces 6 health
+R5 Production  | State: Technical University, pays 35₩ wage (L3), produces 6 edu
+R5 Production  | State: National Public Broadcasting, pays 35₩ wage (L3), produces 4 infl (3 stored)
+R5 Production  | Capitalist: Clinic, pays 30₩ wage (L3), produces 6 health
+R5 Production  | Capitalist: College, pays 30₩ wage (L3), produces 6 edu
+R5 Production  | Capitalist: Shopping Mall, pays 25₩ wage (L3), produces 6 lux
+R5 Production  | Capitalist: Supermarket, pays 25₩ wage (L3), produces 4 food
+R5 Production  | Capitalist: Big Farm, pays 35₩ wage (L3), produces 6 food
+R5 Production  | Capitalist: Fishery, pays 25₩ wage (L3), produces 4 food (2 stored)
+R5 Production  | Capitalist: Luxury Factory (automated), produces 4 lux
+R5 Production  | Capitalist: Bakery, pays 25₩ wage (L3), produces 3 food (0 stored)
+R5 Production  | Capitalist: Electronics Store, pays 25₩ wage (L3), produces 6 lux
+R5 Production  | Middle: Doctor's Office, pays 10₩ to its employee, produces 4 health
+R5 Production  | Middle: Convenience Store, pays 10₩ to its employee, produces 3 food
+R5 Production  | Middle: Music School, pays 10₩ to its employee, produces 4 edu
+R5 Production  | Middle: Tutoring Center, pays 10₩ to its employee, produces 4 edu
+R5 Production  | Middle: Phone Shop, pays 10₩ to its employee, produces 5 lux
+R5 Production  | Middle: Organic Farm, pays 10₩ to its employee, produces 4 food
+R5 Production  | Working: Cooperative Farm produces 2 Food
+R5 Production  | Working: Demonstration! 7 VP penalty to share out
+R5 Production  | Capitalist: -2 VP (Demonstration) → 61
+R5 Production  | Middle: -2 VP (Demonstration) → 56
+R5 Production  | Middle: buys 1 food from Capitalist for 12₩
+R5 Production  | Middle: covers Food for Population 8
+R5 Production  | Working: buys 6 food from Capitalist for 72₩
+R5 Production  | Working: covers Food for Population 8
+R5 Production  | Capitalist: taxes: Employment 9×4=36₩, Corporate 10₩
+R5 Production  | Middle: taxes: Income 6×7=42₩, Employment 6×4=24₩
+R5 Production  | Working: Income tax 6×8=48₩
+R5 Production  | State Treasury 46₩ → 206₩
+R5 Elections   | Vote 2A→2B [W:against M:for C:for] cubes CMCCW: 4–1 PASSED
+R5 Elections   | Capitalist: +3 VP (own Bill passed) → 64
+R5 Elections   | Middle: +1 VP (supported a Bill) → 57
+R5 Elections   | Policy 2 is now B
+R5 Elections   | Capitalist: lowers wages to L2
+R5 Elections   | Vote 3B→3C [W:against M:against C:for] cubes MMWWC: 1–4 failed
+R5 Elections   | Vote 4B→4A [W:for M:against C:against] cubes CMWMC: 1–4 failed
+R5 Elections   | Vote 5B→5A [W:for M:against C:against] cubes MCMWW + Influence Working 1: 3–3 PASSED
+R5 Elections   | Working: +3 VP (own Bill passed) → 64
+R5 Elections   | Policy 5 is now A
+R5 Scoring     | Middle: +5 VP (Prosperity (scoring bonus)) → 62
+R5 Scoring     | Capitalist: +9 VP (Wealth table, Capital 207₩) → 73
+R5 Game end    | === GAME END ===
+R5 Game end    | Working: +1 VP (1 policies in A) → 65
+R5 Game end    | Middle: +10 VP (4 policies in B) → 72
+R5 Game end    | Working: +1 VP (money 19₩) → 66
+R5 Game end    | Middle: +5 VP (goods in storage) → 77
+R5 Game end    | Middle: +5 VP (money 78₩) → 82
+R5 Game end    | Capitalist: +12 VP (goods in storage) → 85
+R5 Game end    | Final VP: Working 66, Middle 82, Capitalist 85. Winner: Capitalist (most VP)
